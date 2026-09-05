@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PRD：A神（AETHER）— 隔网球类智能陪练系统</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "PingFang SC", -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #f7f5f0;
+            color: #1a1a1a;
+            line-height: 1.8;
+            padding: 40px 24px;
+        }
+
+        .container {
+            max-width: 1120px;
+            margin: 0 auto;
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 48px 56px;
+            box-shadow: 0 4px 40px rgba(0, 0, 0, 0.06);
+        }
+
+        /* ===== 文档头部 ===== */
+        .doc-header {
+            border-bottom: 2px solid #c9a96e;
+            padding-bottom: 24px;
+            margin-bottom: 32px;
+        }
+
+        .doc-header h1 {
+            font-size: 28px;
+            font-weight: 600;
+            color: #1a1a1a;
+            letter-spacing: -0.02em;
+        }
+
+        .doc-header .sub {
+            font-size: 15px;
+            color: #666;
+            margin-top: 4px;
+            font-weight: 400;
+        }
+
+        .doc-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 32px;
+            margin-top: 16px;
+            font-size: 13px;
+            color: #555;
+        }
+
+        .doc-meta span strong {
+            color: #1a1a1a;
+            font-weight: 500;
+        }
+
+        .status-badge {
+            display: inline-block;
+            background: #c9a96e;
+            color: #fff;
+            font-size: 12px;
+            font-weight: 500;
+            padding: 2px 16px;
+            border-radius: 40px;
+            letter-spacing: 0.5px;
+        }
+
+        /* ===== 目录 ===== */
+        .toc {
+            background: #f8f6f0;
+            border-radius: 12px;
+            padding: 24px 32px;
+            margin-bottom: 40px;
+        }
+
+        .toc h3 {
+            font-size: 14px;
+            font-weight: 600;
+            color: #c9a96e;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+        }
+
+        .toc-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4px 32px;
+            font-size: 13px;
+            color: #333;
+        }
+
+        .toc-grid a {
+            color: #333;
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.2s;
+        }
+
+        .toc-grid a:hover {
+            border-bottom-color: #c9a96e;
+        }
+
+        /* ===== 章节 ===== */
+        .chapter {
+            margin-bottom: 40px;
+            padding-bottom: 32px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .chapter:last-of-type {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .chapter h2 {
+            font-size: 22px;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 6px;
+            letter-spacing: -0.01em;
+        }
+
+        .chapter .ch-desc {
+            font-size: 14px;
+            color: #777;
+            margin-bottom: 16px;
+        }
+
+        .chapter h3 {
+            font-size: 17px;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-top: 20px;
+            margin-bottom: 6px;
+        }
+
+        .chapter h4 {
+            font-size: 15px;
+            font-weight: 500;
+            color: #2a2a2a;
+            margin-top: 16px;
+            margin-bottom: 4px;
+        }
+
+        .chapter p {
+            font-size: 14px;
+            color: #333;
+            margin-bottom: 10px;
+            line-height: 1.9;
+        }
+
+        .chapter ul,
+        .chapter ol {
+            padding-left: 24px;
+            margin-bottom: 12px;
+        }
+
+        .chapter li {
+            font-size: 14px;
+            color: #333;
+            margin-bottom: 4px;
+            line-height: 1.8;
+        }
+
+        .chapter .highlight-box {
+            background: #f8f6f0;
+            border-left: 3px solid #c9a96e;
+            padding: 16px 20px;
+            border-radius: 4px;
+            margin: 12px 0;
+        }
+
+        .chapter .highlight-box .label {
+            font-size: 12px;
+            color: #c9a96e;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        /* ===== 表格 ===== */
+        .table-wrap {
+            overflow-x: auto;
+            margin: 16px 0 20px;
+        }
+
+        .table-wrap table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 13px;
+            min-width: 500px;
+        }
+
+        .table-wrap th {
+            background: #f0ede6;
+            color: #1a1a1a;
+            padding: 10px 14px;
+            text-align: left;
+            font-weight: 600;
+            border-bottom: 2px solid #c9a96e;
+        }
+
+        .table-wrap td {
+            padding: 10px 14px;
+            border-bottom: 1px solid #e8e4de;
+            color: #333;
+        }
+
+        .table-wrap tr:last-child td {
+            border-bottom: none;
+        }
+
+        .table-wrap .highlight-row td {
+            color: #c9a96e;
+            font-weight: 500;
+        }
+
+        /* ===== 标签 ===== */
+        .pill {
+            display: inline-block;
+            background: #f0ede6;
+            color: #1a1a1a;
+            font-size: 11px;
+            padding: 2px 14px;
+            border-radius: 40px;
+            font-weight: 500;
+            letter-spacing: 0.3px;
+            margin-right: 4px;
+        }
+
+        .pill-gold {
+            background: #c9a96e;
+            color: #fff;
+        }
+
+        /* ===== 响应式 ===== */
+        @media (max-width: 768px) {
+            .container {
+                padding: 24px 20px;
+            }
+
+            .doc-meta {
+                flex-direction: column;
+                gap: 8px;
+            }
+
+            .toc-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .chapter h2 {
+                font-size: 19px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+
+        <!-- ===== 文档头部 ===== -->
+        <div class="doc-header">
+            <h1>产品需求文档 · PRD</h1>
+            <div class="sub">A神（AETHER）— 隔网球类智能陪练系统</div>
+            <div class="doc-meta">
+                <span><strong>版本</strong> V2.0</span>
+                <span><strong>状态</strong> <span class="status-badge">MVP 进行中</span></span>
+                <span><strong>作者</strong> 朱颖</span>
+                <span><strong>日期</strong> 2026年9月</span>
+                <span><strong>密级</strong> 内部公开</span>
+            </div>
+        </div>
+
+        <!-- ===== 目录 ===== -->
+        <div class="toc">
+            <h3>📋 目录</h3>
+            <div class="toc-grid">
+                <a href="#ch00">00. 品牌哲学</a>
+                <a href="#ch01">01. 产品概述</a>
+                <a href="#ch02">02. 目标用户</a>
+                <a href="#ch03">03. 核心能力</a>
+                <a href="#ch04">04. 技术实现</a>
+                <a href="#ch05">05. 硬件形态</a>
+                <a href="#ch06">06. 长记忆机制</a>
+                <a href="#ch07">07. 保密体系</a>
+                <a href="#ch08">08. 商业模式</a>
+                <a href="#ch09">09. 竞品分析</a>
+                <a href="#ch10">10. 产品生命周期</a>
+                <a href="#ch11">11. 冷启动模式</a>
+                <a href="#ch12">12. 成功衡量标准</a>
+                <a href="#ch13">13. 迭代优化机制</a>
+            </div>
+        </div>
+
+        <!-- ============================================================ -->
+        <!-- 00 品牌哲学 -->
+        <!-- ============================================================ -->
+        <div class="chapter" id="ch00">
+            <h2>00 / 品牌哲学</h2>
+            <div class="ch-desc">A = Alpha · 顶级 · 第一。神 = 超越人类认知的存在。</div>
+
+            <p>A神，即是“探索战术未知领域的神级存在”——这正是 AETHER 的产品使命。</p>
+
+            <h3>名字的三重含义</h3>
+
+            <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:16px; margin:12px 0;">
+                <div style="background:#f8f6f0; border-radius:8px; padding:16px 18px; text-align:center;">
+                    <div style="font-size:28px;">🌌</div>
+                    <div style="font-weight:600; font-size:15px; color:#c9a96e; margin:4px 0 2px;">苍穹</div>
+                    <div style="font-size:13px; color:#666;">AETHER是古希腊哲学中构成宇宙的第五元素，是高于地面的纯净之“气”。<br />AI在虚拟空间中探索未知战术，如同在苍穹中翱翔，不受地面束缚。</div>
+                </div>
+                <div style="background:#f8f6f0; border-radius:8px; padding:16px 18px; text-align:center; border:1px solid rgba(201,169,110,0.15);">
+                    <div style="font-size:28px;">🌐</div>
+                    <div style="font-weight:600; font-size:15px; color:#c9a96e; margin:4px 0 2px;">以太</div>
+                    <div style="font-size:13px; color:#666;">19世纪物理学中假设的“光传播介质”，充满整个宇宙。<br />AI生成的球路如同光波，通过 AETHER 这个介质，从虚拟世界传播到真实球台。</div>
+                </div>
+                <div style="background:#f8f6f0; border-radius:8px; padding:16px 18px; text-align:center;">
+                    <div style="font-size:28px;">🌀</div>
+                    <div style="font-weight:600; font-size:15px; color:#c9a96e; margin:4px 0 2px;">虚无</div>
+                    <div style="font-size:13px; color:#666;">每一次发球、每一个落点都是全新的。<br />AETHER 的虚无里，能生出无穷变化。</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============================================================ -->
+        <!-- 01 产品概述 -->
+        <!-- ============================================================ -->
+        <div class="chapter" id="ch01">
+            <h2>01 / 产品概述</h2>
+
+            <h3>1.1 产品定义</h3>
+            <p>A神（AETHER）是一个面向专业运动队的<strong>智能陪练系统</strong>，通过虚拟自博弈探索新球路，并通过物理设备实际打给选手接。它不是模仿名手，而是创造“从未出现过的球路”。</p>
+
+            <h3>1.2 一句话定位</h3>
+            <div class="highlight-box">
+                <div class="label">🎯 产品定位</div>
+                <p style="font-size:16px; font-weight:500; color:#1a1a1a; margin:4px 0 0;">探索人类尚未抵达的战术边界。</p>
+            </div>
+
+            <h3>1.3 核心价值主张</h3>
+            <ul>
+                <li><strong>对运动员：</strong>提供永不枯竭的、不断进化的高质量对抗，帮助突破技术瓶颈。</li>
+                <li><strong>对教练：</strong>通过数据画像和自动生成的球路报告，将训练从“经验驱动”升级为“数据驱动”。</li>
+                <li><strong>对队伍：</strong>一台设备可服务 20-50 名运动员，数据云端隔离，一人一档案，提升整体训练效率。</li>
+            </ul>
+        </div>
+
+        <!-- ============================================================ -->
+        <!-- 02 目标用户 -->
+        <!-- ============================================================ -->
+        <div class="chapter" id="ch02">
+            <h2>02 / 目标用户</h2>
+
+            <h3>2.1 三层受众金字塔</h3>
+            <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:16px; margin:12px 0;">
+                <div style="background:#f8f6f0; border-radius:8px; padding:16px 18px; text-align:center; border-top:3px solid rgba(201,169,110,0.4);">
+                    <div style="font-size:12px; color:#c9a96e; letter-spacing:1px; text-transform:uppercase;">第一优先级 · 品牌灯塔</div>
+                    <div style="font-weight:600; font-size:17px; margin:4px 0 2px;">国家队</div>
+                    <div style="font-size:13px; color:#666;">数量极少，话语权最强。<br />签下 1-2 支队伍即是最硬的产品背书。</div>
+                    <div style="font-size:12px; color:#999; margin-top:4px;">商业价值：品牌背书 &gt; 直接营收</div>
+                </div>
+                <div style="background:#f8f6f0; border-radius:8px; padding:16px 18px; text-align:center; border-top:3px solid rgba(201,169,110,0.3);">
+                    <div style="font-size:12px; color:#c9a96e; letter-spacing:1px; text-transform:uppercase;">第二优先级 · 营收基本盘</div>
+                    <div style="font-weight:600; font-size:17px; margin:4px 0 2px;">省队 · 青训基地 · 体校</div>
+                    <div style="font-size:13px; color:#666;">数量适中，需求真实，付费能力中等。<br />“高质量陪练”是最真实痛点。</div>
+                    <div style="font-size:12px; color:#999; margin-top:4px;">商业价值：主力营收来源</div>
+                </div>
+                <div style="background:#f8f6f0; border-radius:8px; padding:16px 18px; text-align:center; border-top:3px solid rgba(201,169,110,0.15);">
+                    <div style="font-size:12px; color:#c9a96e; letter-spacing:1px; text-transform:uppercase;">第三优先级 · 规模化扩展</div>
+                    <div style="font-weight:600; font-size:17px; margin:4px 0 2px;">高水平俱乐部 · 个人选手</div>
+                    <div style="font-size:13px; color:#666;">数量最大，付费能力中低。<br />可作为轻量化版本的未来扩展方向。</div>
+                    <div style="font-size:12px; color:#999; margin-top:4px;">商业价值：规模化潜力最大</div>
+                </div>
+            </div>
+
+            <h3>2.2 商业化路径</h3>
+            <p><strong>省队/青训验证 → 国家队背书 → 俱乐部规模化</strong></p>
+            <p style="font-size:14px; color:#666;">先在一支省队验证产品价值，打磨交付能力；再通过国家队签约获得行业公信力；最后以标准化方案向高水平俱乐部和培训机构规模化复制。</p>
+        </div>
+
+        <!-- ============================================================ -->
+        <!-- 03 核心能力 -->
+        <!-- ============================================================ -->
+        <div class="chapter" id="ch03">
+            <h2>03 / 核心能力</h2>
+
+            <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:16px; margin:12px 0;">
+                <div style="background:#f8f6f0; border-radius:8px; padding:16px 18px;">
+                    <div style="font-size:24px;">🧬</div>
+                    <div style="font-weight:600; font-size:15px; color:#c9a96e;">战术生成引擎</div>
+                    <div style="font-size:13px; color:#666; line-height:1.8;">AI在虚拟空间中通过自博弈不断生成新的球路组合——旋转、落点、节奏——然后通过硬件实际打给选手接。</div>
+                </div>
+                <div style="background:#f8f6f0; border-radius:8px; padding:16px 18px;">
+                    <div style="font-size:24px;">🔄</div>
+                    <div style="font-weight:600; font-size:15px; color:#c9a96e;">实时适应</div>
+                    <div style="font-size:13px; color:#666; line-height:1.8;">摄像头捕捉选手的站位、击球动作和回球质量，AI实时调整下一球的参数——让陪练始终和选手的水平相匹配。</div>
+                </div>
+                <div style="background:#f8f6f0; border-radius:8px; padding:16px 18px;">
+                    <div style="font-size:24px;">📡</div>
+                    <div style="font-weight:600; font-size:15px; color:#c9a96e;">对抗数据沉淀</div>
+                    <div style="font-size:13px; color:#666; line-height:1.8;">每次训练都是一次“考试”。系统记录选手对不同球路的应对能力，生成个人技术画像——强项、弱项、盲区一目了然。</div>
+                </div>
+            </div>
+
+            <div class="highlight-box">
+                <div class="label">⚡ 关键能力</div>
+                <p style="margin:4px 0 0; font-size:14px; color:#333;">长记忆 · 一人一档案 · 云端同步 · 多人共用设备</p>
+            </div>
+        </div>
+
+        <!-- ============================================================ -->
+        <!-- 04 技术实现 -->
+        <!-- ============================================================ -->
+        <div class="chapter" id="ch04">
+            <h2>04 / 技术实现细节</h2>
+
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px; margin:12px 0;">
+                <div style="background:#f8f6f0; border-radius:8px; padding:14px 18px;">
+                    <div style="font-size:11px; color:#c9a96e; letter-spacing:1px; text-transform:uppercase;">球路生成引擎</div>
+                    <div style="font-weight:600; font-size:15px; margin:2px 0;">分层强化学习 + MuJoCo仿真</div>
+                    <div style="font-size:13px; color:#666;">Hierarchical DRL 将目标拆解为微观动作，MuJoCo 物理仿真实现“虚拟打球”，逆强化学习实时推断对手策略意图。</div>
+                    <div style="font-size:12px; color:#c9a96e; margin-top:4px;">⚡ 球路延迟 ≤ 200ms · 新球路 ≥ 100种/日</div>
+                </div>
+                <div style="background:#f8f6f0; border-radius:8px; padding:14px 18px;">
+                    <div style="font-size:11px; color:#c9a96e; letter-spacing:1px; text-transform:uppercase;">物理执行控制</div>
+                    <div style="font-weight:600; font-size:15px; margin:2px 0;">端到端学习 + 模仿学习</div>
+                    <div style="font-size:13px; color:#666;">E2E 框架将 AI 生成的战术参数直接映射为电机控制信号，模块化架构实现算法与硬件的解耦迭代。</div>
+                    <div style="font-size:12px; color:#c9a96e; margin-top:4px;">🎯 落点精度 ±10cm · 旋转组合 ≥ 60种</div>
+                </div>
+                <div style="background:#f8f6f0; border-radius:8px; padding:14px 18px;">
+                    <div style="font-size:11px; color:#c9a96e; letter-spacing:1px; text-transform:uppercase;">感知系统</div>
+                    <div style="font-weight:600; font-size:15px; margin:2px 0;">YOLOv11s + DeepSORT + OpenPose</div>
+                    <div style="font-size:13px; color:#666;">改进型 YOLO 实现毫米级动作捕捉，DeepSORT 多目标追踪，OpenPose 提取 2D/3D 骨骼关键点。</div>
+                    <div style="font-size:12px; color:#c9a96e; margin-top:4px;">📷 检测帧率 ≥ 30FPS · 姿态精度 ≤ 2cm</div>
+                </div>
+                <div style="background:#f8f6f0; border-radius:8px; padding:14px 18px;">
+                    <div style="font-size:11px; color:#c9a96e; letter-spacing:1px; text-transform:uppercase;">长记忆系统</div>
+                    <div style="font-weight:600; font-size:15px; margin:2px 0;">STM+LTM 双轨 + 向量检索</div>
+                    <div style="font-size:13px; color:#666;">短期记忆 (STM) 存储当前对抗状态，长期记忆 (LTM) 沉淀历史画像，向量数据库 (Pinecone) 实现语义检索。</div>
+                    <div style="font-size:12px; color:#c9a96e; margin-top:4px;">🧠 检索延迟 ≤ 100ms · 画像更新 ≤ 5min</div>
+                </div>
+            </div>
+
+            <div style="background:#f0ede6; border-radius:8px; padding:12px 18px; text-align:center; font-size:13px; color:#666;">
+                端侧推理（NVIDIA Jetson Orin NX）· 5G 低延迟传输 · 零信任安全架构
+            </div>
+        </div>
+
+        <!-- ============================================================ -->
+        <!-- 05 硬件形态 -->
+        <!-- ============================================================ -->
+        <div class="chapter" id="ch05">
+            <h2>05 / 硬件形态</h2>
+            <div class="ch-desc">A神是一台能实时打出 AI 生成球路的智能发球终端。</div>
+
+            <div style="display:grid; grid-template-columns:1fr 1fr 1fr 1fr; gap:12px; margin:12px 0;">
+                <div style="background:#f8f6f0; border-radius:8px; padding:12px 14px; text-align:center;">
+                    <div style="font-weight:600; font-size:18px; color:#c9a96e;">~1.4m</div>
+                    <div style="font-size:12px; color:#999;">整机高度</div>
+                </div>
+                <div style="background:#f8f6f0; border-radius:8px; padding:12px 14px; text-align:center;">
+                    <div style="font-weight:600; font-size:18px; color:#c9a96e;">~18kg</div>
+                    <div style="font-size:12px; color:#999;">整机重量</div>
+                </div>
+                <div style="background:#f8f6f0; border-radius:8px; padding:12px 14px; text-align:center;">
+                    <div style="font-weight:600; font-size:18px; color:#c9a96e;">≤ 200ms</div>
+                    <div style="font-size:12px; color:#999;">响应时延</div>
+                </div>
+                <div style="background:#f8f6f0; border-radius:8px; padding:12px 14px; text-align:center;">
+                    <div style="font-weight:600; font-size:18px; color:#c9a96e;">60+</div>
+                    <div style="font-size:12px; color:#999;">可调旋转组合</div>
+                </div>
+            </div>
+
+            <h3>5.1 设计语言：神秘 · 酷冷 · 轻量 · 护眼</h3>
+            <p>A神机身采用<strong>哑光暗影黑</strong>金属外壳，表面做低反射处理，在训练场灯光下不反光。机身轮廓以<strong>棱角切面</strong>为主，传递精准、快速的竞技感。</p>
+
+            <h3>5.2 “鹰眼”视觉系统</h3>
+            <p>顶部双摄像头呈 V 字形排列，模拟猛禽双眼的凝视感。关机时镜片与机身融为一体；训练时冰蓝色光环以<strong>无频闪、低蓝光、低照度</strong>的方式稳定亮起，柔和注视选手，完全符合乒乓球赛事对光线的严格标准。生成新球路时，光环以缓慢呼吸而非闪烁的方式变化一次，表示“发现新战术”。</p>
+
+            <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:12px; margin:12px 0;">
+                <div style="background:#f8f6f0; border-radius:8px; padding:10px 14px; text-align:center;">
+                    <div style="font-size:12px; color:#c9a96e; letter-spacing:1px;">待机</div>
+                    <div style="font-size:13px; color:#666;">无光 · 完全隐藏</div>
+                </div>
+                <div style="background:#f8f6f0; border-radius:8px; padding:10px 14px; text-align:center; border:1px solid rgba(201,169,110,0.15);">
+                    <div style="font-size:12px; color:#c9a96e; letter-spacing:1px;">训练中</div>
+                    <div style="font-size:13px; color:#666;">冰蓝 · 柔和注视 · 护眼</div>
+                </div>
+                <div style="background:#f8f6f0; border-radius:8px; padding:10px 14px; text-align:center;">
+                    <div style="font-size:12px; color:#c9a96e; letter-spacing:1px;">生成新球路</div>
+                    <div style="font-size:13px; color:#666;">呼吸脉冲 · 非闪烁</div>
+                </div>
+            </div>
+
+            <div style="background:#f8f6f0; border-radius:8px; padding:16px 20px; margin-top:12px; border-left:3px solid #c9a96e;">
+                <div style="font-size:13px; font-weight:600; color:#c9a96e;">🧠 心理机制：被注视的对抗</div>
+                <p style="font-size:14px; color:#555; margin-top:4px;">鹰眼不仅是视觉传感器，更是选手的“对手化身”。在顶级竞技中，“被注视感”会激发选手的胜负欲与专注力。A神的眼睛始终朝向运动员，像一位沉默的对手在凝视——为训练注入真实的对抗感，而非冷冰冰的器械训练。赛后，选手可以说“我今天打赢了 A神”——它成为了一个可以被战胜的符号，一个意志力的锚点。</p>
+            </div>
+
+            <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:12px; margin-top:12px;">
+                <div style="background:#f8f6f0; border-radius:8px; padding:10px 14px; text-align:center;">
+                    <div style="font-size:11px; color:#999;">材质</div>
+                    <div style="font-size:14px; color:#1a1a1a; font-weight:500;">铝合金 + 碳纤维</div>
+                </div>
+                <div style="background:#f8f6f0; border-radius:8px; padding:10px 14px; text-align:center;">
+                    <div style="font-size:11px; color:#999;">核心部件</div>
+                    <div style="font-size:14px; color:#1a1a1a; font-weight:500;">NVIDIA Jetson Orin NX</div>
+                </div>
+                <div style="background:#f8f6f0; border-radius:8px; padding:10px 14px; text-align:center;">
+                    <div style="font-size:11px; color:#999;">模块化</div>
+                    <div style="font-size:14px; color:#1a1a1a; font-weight:500;">快拆发球头 · 多品类适配</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============================================================ -->
+        <!-- 06 长记忆机制 -->
+        <!-- ============================================================ -->
+        <div class="chapter" id="ch06">
+            <h2>06 / 长记忆机制</h2>
+            <div class="ch-desc">一人一档案 · 多人共用设备</div>
+
+            <p>一台设备存储无限个人档案，每个选手独立记忆、独立成长曲线。换人不换设备，数据云端隔离。</p>
+
+            <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:16px; margin:12px 0;">
+                <div style="background:#f8f6f0; border-radius:8px; padding:16px 18px; text-align:center;">
+                    <div style="font-size:28px;">👤</div>
+                    <div style="font-weight:600; font-size:15px; color:#c9a96e;">一人一档案</div>
+                    <div style="font-size:13px; color:#666;">每位选手拥有独立的个人账户，系统从零学习其技战术特征、强项、弱项、成长曲线，数据永不混淆。</div>
+                </div>
+                <div style="background:#f8f6f0; border-radius:8px; padding:16px 18px; text-align:center; border:1px solid rgba(201,169,110,0.15);">
+                    <div style="font-size:28px;">🔄</div>
+                    <div style="font-weight:600; font-size:15px; color:#c9a96e;">多人共用设备</div>
+                    <div style="font-size:13px; color:#666;">一台设备可服务 20-50 名运动员，按账号切换数据。省队买一台设备，全队都能用。</div>
+                </div>
+                <div style="background:#f8f6f0; border-radius:8px; padding:16px 18px; text-align:center;">
+                    <div style="font-size:28px;">☁️</div>
+                    <div style="font-weight:600; font-size:15px; color:#c9a96e;">云端同步</div>
+                    <div style="font-size:13px; color:#666;">数据跟账号走，不绑定设备。选手换设备、换场地，数据自动同步，永不丢失。</div>
+                </div>
+            </div>
+
+            <div class="highlight-box">
+                <div class="label">💡 核心壁垒</div>
+                <p style="margin:4px 0 0; font-size:14px; color:#333;">数据越丰富，迁移成本越高。省队用了 3 年，积累了数千小时的训练数据——他们不会轻易换掉这个系统。</p>
+            </div>
+        </div>
+
+        <!-- ============================================================ -->
+        <!-- 07 保密体系 -->
+        <!-- ============================================================ -->
+        <div class="chapter" id="ch07">
+            <h2>07 / 保密体系</h2>
+            <div class="ch-desc">四位一体 · 军工级数据安全</div>
+
+            <p>国家队/省队的训练数据属于机密。A神从法律、技术、运营、物理四个层面构建了完整的数据安全防护体系。</p>
+
+            <div style="display:grid; grid-template-columns:1fr 1fr 1fr 1fr; gap:12px; margin:12px 0;">
+                <div style="background:#f8f6f0; border-radius:8px; padding:14px 16px; text-align:center;">
+                    <div style="font-size:24px;">⚖️</div>
+                    <div style="font-weight:600; font-size:14px; color:#c9a96e;">法律层面</div>
+                    <div style="font-size:12px; color:#666; line-height:1.8;">数据 100% 所有权归客户<br />签署《保密协议》<br />遵循《数据安全法》《个人信息保护法》</div>
+                </div>
+                <div style="background:#f8f6f0; border-radius:8px; padding:14px 16px; text-align:center;">
+                    <div style="font-size:24px;">🔐</div>
+                    <div style="font-weight:600; font-size:14px; color:#c9a96e;">技术层面</div>
+                    <div style="font-size:12px; color:#666; line-height:1.8;">TLS 1.3 传输加密<br />AES-256 存储加密<br />“三不”原则：不进训练集·不做公开分享·不出客户环境</div>
+                </div>
+                <div style="background:#f8f6f0; border-radius:8px; padding:14px 16px; text-align:center;">
+                    <div style="font-size:24px;">🧑‍💻</div>
+                    <div style="font-weight:600; font-size:14px; color:#c9a96e;">运营层面</div>
+                    <div style="font-size:12px; color:#666; line-height:1.8;">内部数据隔离 · 多级权限<br />员工背景调查与保密承诺<br />定期安全审计与渗透测试</div>
+                </div>
+                <div style="background:#f8f6f0; border-radius:8px; padding:14px 16px; text-align:center;">
+                    <div style="font-size:24px;">🛡️</div>
+                    <div style="font-weight:600; font-size:14px; color:#c9a96e;">物理层面</div>
+                    <div style="font-size:12px; color:#666; line-height:1.8;">防拆传感器 · 自动锁死<br />多因素认证登录<br />远程“一键擦除”功能</div>
+                </div>
+            </div>
+
+            <div class="highlight-box">
+                <div class="label">🔒 核心原则</div>
+                <p style="margin:4px 0 0; font-size:14px; color:#333;">每一帧视频的所属权都是客户的，每一份数据都经过军工级加密。这是我们进入国家队和省队市场的“入场券”。</p>
+            </div>
+        </div>
+
+        <!-- ============================================================ -->
+        <!-- 08 商业模式 -->
+        <!-- ============================================================ -->
+        <div class="chapter" id="ch08">
+            <h2>08 / 商业模式</h2>
+            <div class="ch-desc">硬件 + 账号 双轮驱动</div>
+
+            <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:16px; margin:12px 0;">
+                <div style="background:#f8f6f0; border-radius:8px; padding:16px 18px; text-align:center;">
+                    <div style="font-size:12px; color:#c9a96e; letter-spacing:1px; text-transform:uppercase;">标准版</div>
+                    <div style="font-weight:600; font-size:24px; color:#1a1a1a; margin:4px 0 2px;">¥39,800</div>
+                    <div style="font-size:14px; color:#666;">+ ¥9,800 / 人 / 年</div>
+                    <div style="font-size:13px; color:#999; margin-top:4px;">省队 · 青训基地<br />≤ 20 账号</div>
+                </div>
+                <div style="background:#f8f6f0; border-radius:8px; padding:16px 18px; text-align:center; border:1px solid rgba(201,169,110,0.15);">
+                    <div style="font-size:12px; color:#c9a96e; letter-spacing:1px; text-transform:uppercase;">专业版</div>
+                    <div style="font-weight:600; font-size:24px; color:#1a1a1a; margin:4px 0 2px;">¥68,000</div>
+                    <div style="font-size:14px; color:#666;">+ ¥7,800 / 人 / 年</div>
+                    <div style="font-size:13px; color:#999; margin-top:4px;">国家队 · 大型训练中心<br />≤ 50 账号</div>
+                </div>
+                <div style="background:#f8f6f0; border-radius:8px; padding:16px 18px; text-align:center;">
+                    <div style="font-size:12px; color:#c9a96e; letter-spacing:1px; text-transform:uppercase;">旗舰版</div>
+                    <div style="font-weight:600; font-size:24px; color:#1a1a1a; margin:4px 0 2px;">¥128,000</div>
+                    <div style="font-size:14px; color:#666;">+ ¥5,800 / 人 / 年</div>
+                    <div style="font-size:13px; color:#999; margin-top:4px;">多品类覆盖 · 定制化开发<br />不限账号</div>
+                </div>
+            </div>
+
+            <div style="background:#f0ede6; border-radius:8px; padding:12px 18px; text-align:center; font-size:13px; color:#555;">
+                📊 省队采购 1 台标准版 + 20 个账号 → 首年收入 ≈ ¥235,800 · 次年续费毛利率 ≥ 60%
+            </div>
+        </div>
+
+        <!-- ============================================================ -->
+        <!-- 09 竞品分析 -->
+        <!-- ============================================================ -->
+        <div class="chapter" id="ch09">
+            <h2>09 / 竞品分析</h2>
+
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr><th>竞品</th><th>核心能力</th><th>球路来源</th><th>长记忆</th><th>多人共用</th><th>保密体系</th><th>核心短板</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>庞伯特</td><td>发球机+AI语音纠错</td><td>预设程序</td><td>❌</td><td>❌</td><td>❌</td><td>只能重复预设球路</td></tr>
+                        <tr><td>Smartshot</td><td>场馆摄像头+数据报告</td><td>仅记录</td><td>❌</td><td>✅</td><td>❌</td><td>只记录，不打球</td></tr>
+                        <tr><td>银河通用</td><td>具身机器人</td><td>强化学习</td><td>❌</td><td>❌</td><td>❌</td><td>成本高，仅网球</td></tr>
+                        <tr class="highlight-row"><td>A神</td><td>AI陪练+自博弈+长记忆</td><td>AI实时生成</td><td>✅</td><td>✅</td><td>✅</td><td>新进入者</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- ============================================================ -->
+        <!-- 10 产品生命周期 -->
+        <!-- ============================================================ -->
+        <div class="chapter" id="ch10">
+            <h2>10 / 产品生命周期</h2>
+
+            <div style="display:grid; grid-template-columns:1fr 1fr 1fr 1fr 1fr; gap:12px; margin:12px 0;">
+                <div style="background:#f8f6f0; border-radius:8px; padding:14px 16px; text-align:center; border-top:2px solid rgba(201,169,110,0.2);">
+                    <div style="font-size:11px; color:#c9a96e; letter-spacing:1px;">阶段 1</div>
+                    <div style="font-weight:600; font-size:15px; margin:2px 0;">概念验证</div>
+                    <div style="font-size:12px; color:#666;">单品类·内部测试<br />验证球路生成</div>
+                    <div style="font-size:11px; color:#999; margin-top:4px;">⏱ 0-6月</div>
+                </div>
+                <div style="background:#f8f6f0; border-radius:8px; padding:14px 16px; text-align:center; border-top:2px solid rgba(201,169,110,0.2);">
+                    <div style="font-size:11px; color:#c9a96e; letter-spacing:1px;">阶段 2</div>
+                    <div style="font-weight:600; font-size:15px; margin:2px 0;">MVP交付</div>
+                    <div style="font-size:12px; color:#666;">省队试点<br />验证多账号共用</div>
+                    <div style="font-size:11px; color:#999; margin-top:4px;">⏱ 6-12月</div>
+                </div>
+                <div style="background:#f8f6f0; border-radius:8px; padding:14px 16px; text-align:center; border-top:2px solid rgba(201,169,110,0.3);">
+                    <div style="font-size:11px; color:#c9a96e; letter-spacing:1px;">阶段 3</div>
+                    <div style="font-weight:600; font-size:15px; margin:2px 0;">PMF验证</div>
+                    <div style="font-size:12px; color:#666;">跨品类适配<br />青训基地拓展</div>
+                    <div style="font-size:11px; color:#999; margin-top:4px;">⏱ 12-18月</div>
+                </div>
+                <div style="background:#f8f6f0; border-radius:8px; padding:14px 16px; text-align:center; border-top:2px solid rgba(201,169,110,0.3);">
+                    <div style="font-size:11px; color:#c9a96e; letter-spacing:1px;">阶段 4</div>
+                    <div style="font-weight:600; font-size:15px; margin:2px 0;">商业化</div>
+                    <div style="font-size:12px; color:#666;">国家队合作<br />硬件+账号订阅</div>
+                    <div style="font-size:11px; color:#999; margin-top:4px;">⏱ 18-24月</div>
+                </div>
+                <div style="background:#f8f6f0; border-radius:8px; padding:14px 16px; text-align:center; border-top:2px solid rgba(201,169,110,0.4);">
+                    <div style="font-size:11px; color:#c9a96e; letter-spacing:1px;">阶段 5</div>
+                    <div style="font-weight:600; font-size:15px; margin:2px 0;">生态平台</div>
+                    <div style="font-size:12px; color:#666;">开放API<br />跨运动品类覆盖</div>
+                    <div style="font-size:11px; color:#999; margin-top:4px;">⏱ 24-36月</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============================================================ -->
+        <!-- 11 冷启动模式 -->
+        <!-- ============================================================ -->
+        <div class="chapter" id="ch11">
+            <h2>11 / 冷启动模式</h2>
+
+            <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:16px; margin:12px 0;">
+                <div style="background:#f8f6f0; border-radius:8px; padding:16px 18px; border-left:2px solid #c9a96e;">
+                    <div style="font-size:11px; color:#c9a96e; letter-spacing:1px;">Layer 1</div>
+                    <div style="font-weight:600; font-size:15px; margin:2px 0;">种子球路库</div>
+                    <div style="font-size:13px; color:#666;">从公开赛事录像中提取 <strong>500+ 关键球</strong>，标注旋转、落点、节奏参数，作为 AI 的初始训练数据。</div>
+                    <div style="font-size:12px; color:#999; margin-top:4px;">⏱ 耗时 2-3 个月</div>
+                </div>
+                <div style="background:#f8f6f0; border-radius:8px; padding:16px 18px; border-left:2px solid #c9a96e;">
+                    <div style="font-size:11px; color:#c9a96e; letter-spacing:1px;">Layer 2</div>
+                    <div style="font-weight:600; font-size:15px; margin:2px 0;">专家校验闭环</div>
+                    <div style="font-size:13px; color:#666;">邀请 3-5 位专业教练对 AI 生成的球路进行 <strong>可执行性评分</strong>，建立“好球路”的金标准。</div>
+                    <div style="font-size:12px; color:#999; margin-top:4px;">教练费用可复用</div>
+                </div>
+                <div style="background:#f8f6f0; border-radius:8px; padding:16px 18px; border-left:2px solid #c9a96e;">
+                    <div style="font-size:11px; color:#c9a96e; letter-spacing:1px;">Layer 3</div>
+                    <div style="font-weight:600; font-size:15px; margin:2px 0;">数据飞轮启动</div>
+                    <div style="font-size:13px; color:#666;">首批用户使用后，系统自动记录 <strong>选手回球质量、适应曲线</strong>，持续优化 AI 生成的球路参数。</div>
+                    <div style="font-size:12px; color:#999; margin-top:4px;">目标：3个月积累 5000+ 有效反馈样本</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============================================================ -->
+        <!-- 12 成功衡量标准 -->
+        <!-- ============================================================ -->
+        <div class="chapter" id="ch12">
+            <h2>12 / 成功衡量标准</h2>
+
+            <div class="highlight-box">
+                <div class="label">🎯 北极星指标</div>
+                <p style="font-size:18px; font-weight:500; color:#c9a96e; margin:4px 0 0;">选手在 AI 陪练对抗中，面对新球路的成功回球率提升幅度。</p>
+            </div>
+
+            <div style="display:grid; grid-template-columns:1fr 1fr 1fr 1fr; gap:12px; margin:12px 0;">
+                <div style="background:#f8f6f0; border-radius:8px; padding:14px 16px; text-align:center;">
+                    <div style="font-weight:600; font-size:26px; color:#c9a96e;">≥ 15%</div>
+                    <div style="font-size:13px; color:#1a1a1a; font-weight:500;">新球路适应速度</div>
+                    <div style="font-size:12px; color:#999;">选手面对新球路时<br />成功回球率提升</div>
+                </div>
+                <div style="background:#f8f6f0; border-radius:8px; padding:14px 16px; text-align:center;">
+                    <div style="font-weight:600; font-size:26px; color:#c9a96e;">≥ 70%</div>
+                    <div style="font-size:13px; color:#1a1a1a; font-weight:500;">训练采纳率</div>
+                    <div style="font-size:12px; color:#999;">教练选择使用 AI 陪练<br />替代传统陪练的比例</div>
+                </div>
+                <div style="background:#f8f6f0; border-radius:8px; padding:14px 16px; text-align:center;">
+                    <div style="font-weight:600; font-size:26px; color:#c9a96e;">≥ 85%</div>
+                    <div style="font-size:13px; color:#1a1a1a; font-weight:500;">客户留存率</div>
+                    <div style="font-size:12px; color:#999;">年度续约率<br />衡量长期价值</div>
+                </div>
+                <div style="background:#f8f6f0; border-radius:8px; padding:14px 16px; text-align:center;">
+                    <div style="font-weight:600; font-size:26px; color:#c9a96e;">≥ 200</div>
+                    <div style="font-size:13px; color:#1a1a1a; font-weight:500;">日活球路数</div>
+                    <div style="font-size:12px; color:#999;">单台设备每日<br />生成的不同球路数量</div>
+                </div>
+            </div>
+
+            <div style="background:#f0ede6; border-radius:8px; padding:12px 18px; text-align:center; font-size:13px; color:#555;">
+                ⚡ 关键指标：NPS ≥ +30 · 系统可用性 ≥ 99.5% · 单球生成延迟 ≤ 200ms
+            </div>
+        </div>
+
+        <!-- ============================================================ -->
+        <!-- 13 迭代优化机制 -->
+        <!-- ============================================================ -->
+        <div class="chapter" id="ch13">
+            <h2>13 / 迭代优化机制</h2>
+            <div class="ch-desc">数据驱动的三环迭代</div>
+
+            <p>每周 A/B 测试 · 每日用户反馈 · 每月模型训练 — 三个并行环驱动产品持续进化。</p>
+
+            <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:16px; margin:12px 0;">
+                <div style="background:#f8f6f0; border-radius:8px; padding:16px 18px; border-left:2px solid #c9a96e;">
+                    <div style="font-size:11px; color:#c9a96e; letter-spacing:1px;">周迭代</div>
+                    <div style="font-weight:600; font-size:15px; margin:2px 0;">🔬 A/B 测试环</div>
+                    <div style="font-size:13px; color:#666;">对比新球路生成策略 vs 当前策略<br />关注指标：训练采纳率、新球路适应速度</div>
+                    <div style="font-size:12px; color:#999; margin-top:4px;">触发条件：连续 2 周适应速度 &lt; 12%</div>
+                </div>
+                <div style="background:#f8f6f0; border-radius:8px; padding:16px 18px; border-left:2px solid #c9a96e;">
+                    <div style="font-size:11px; color:#c9a96e; letter-spacing:1px;">日迭代</div>
+                    <div style="font-weight:600; font-size:15px; margin:2px 0;">📊 用户反馈环</div>
+                    <div style="font-size:13px; color:#666;">显式反馈（评分）+ 隐式反馈（行为数据）<br />实时调整推荐权重，优化个性化画像</div>
+                    <div style="font-size:12px; color:#999; margin-top:4px;">触发条件：负面反馈率 &gt; 20%</div>
+                </div>
+                <div style="background:#f8f6f0; border-radius:8px; padding:16px 18px; border-left:2px solid #c9a96e;">
+                    <div style="font-size:11px; color:#c9a96e; letter-spacing:1px;">月迭代</div>
+                    <div style="font-weight:600; font-size:15px; margin:2px 0;">🧠 模型训练环</div>
+                    <div style="font-size:13px; color:#666;">全量历史数据 + 新标注数据<br />发布新版本模型（版本号递增）</div>
+                    <div style="font-size:12px; color:#999; margin-top:4px;">版本号格式：V主版本.功能版本.补丁版本</div>
+                </div>
+            </div>
+
+            <h3>迭代决策流程</h3>
+            <div style="background:#f0ede6; border-radius:8px; padding:12px 18px; text-align:center; font-size:14px; color:#333;">
+                数据监控 → 触发阈值 → 分析报告 → 团队评审 → 决策执行
+            </div>
+            <p style="font-size:13px; color:#999; margin-top:4px;">数据监控实时 · 触发后 2 小时内生成报告 · 24 小时内评审 · 评审后立即执行</p>
+
+            <h3>版本回滚预案</h3>
+            <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:12px;">
+                <div style="background:#f8f6f0; border-radius:8px; padding:10px 14px; text-align:center; border-left:2px solid rgba(255,60,60,0.3);">
+                    <div style="font-size:11px; color:rgba(255,60,60,0.5);">回滚触发条件</div>
+                    <div style="font-size:13px; color:#666;">24h 内可用性 &lt; 99%</div>
+                </div>
+                <div style="background:#f8f6f0; border-radius:8px; padding:10px 14px; text-align:center; border-left:2px solid rgba(255,60,60,0.3);">
+                    <div style="font-size:11px; color:rgba(255,60,60,0.5);">回滚动作</div>
+                    <div style="font-size:13px; color:#666;">自动回滚至上一稳定版本</div>
+                </div>
+                <div style="background:#f8f6f0; border-radius:8px; padding:10px 14px; text-align:center; border-left:2px solid rgba(255,60,60,0.3);">
+                    <div style="font-size:11px; color:rgba(255,60,60,0.5);">恢复时间</div>
+                    <div style="font-size:13px; color:#666;">≤ 5 分钟</div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>
