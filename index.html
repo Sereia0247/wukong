@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>AETHER — 产品决策档案</title>
+    <title>AETHER — 探索人类尚未抵达的战术边界。</title>
     <style>
+        /* ===== 全局 ===== */
         * {
             margin: 0;
             padding: 0;
@@ -61,6 +62,7 @@
             color: #f0c060;
         }
 
+        /* ===== Hero ===== */
         .hero {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -82,11 +84,11 @@
         }
 
         .hero-text h1 {
-            font-size: 38px;
+            font-size: 42px;
             font-weight: 300;
             letter-spacing: -0.02em;
-            line-height: 1.15;
-            margin-bottom: 10px;
+            line-height: 1.1;
+            margin-bottom: 8px;
         }
 
         .hero-text h1 .gold {
@@ -98,6 +100,14 @@
             color: rgba(255, 255, 255, 0.3);
             font-weight: 300;
             max-width: 600px;
+        }
+
+        .hero-text .desc {
+            font-size: 15px;
+            color: rgba(255, 255, 255, 0.2);
+            max-width: 480px;
+            line-height: 1.9;
+            margin: 8px 0 16px;
         }
 
         .hero-text .meta {
@@ -750,20 +760,6 @@
             border-color: rgba(240, 192, 96, 0.12);
         }
 
-        /* 返回顶部按钮 */
-        .back-top {
-            display: inline-block;
-            color: rgba(255, 255, 255, 0.06);
-            font-size: 11px;
-            text-decoration: none;
-            margin-top: 8px;
-            transition: color 0.2s;
-        }
-
-        .back-top:hover {
-            color: rgba(255, 255, 255, 0.15);
-        }
-
         @media (max-width: 768px) {
             .hero {
                 grid-template-columns: 1fr;
@@ -771,6 +767,9 @@
                 text-align: center;
             }
             .hero-text .sub {
+                max-width: 100%;
+            }
+            .hero-text .desc {
                 max-width: 100%;
             }
             .hero-text .meta {
@@ -870,17 +869,26 @@
         </div>
     </nav>
 
+    <!-- ============================================================ -->
     <!-- ===== Hero ===== -->
+    <!-- ============================================================ -->
     <div class="hero">
         <div class="hero-text">
-            <div class="tag">产品决策档案 · 2026</div>
-            <h1>A神 · <span class="gold">隔网球类智能陪练</span></h1>
-            <div class="sub">一份从 0 到 1 的产品经理思考轨迹 · 9 个关键决策节点</div>
+            <div class="tag">✦ 智能陪练 · B端 · 具身智能</div>
+            <h1>
+                探索人类尚未抵达的<br />
+                <span class="gold">战术边界。</span>
+            </h1>
+            <div class="sub">隔网球类 · 智能陪练系统 · 省队/青训/国家队</div>
+            <div class="desc">
+                通过虚拟自博弈探索新打法，并通过物理设备实际打出来。<br />
+                不是模仿名手，而是创造“从未出现过的球路”。
+            </div>
             <div class="meta">
-                <span>定位 · 智能陪练</span>
-                <span>形态 · 具身智能</span>
-                <span>受众 · 省队 / 青训</span>
-                <span>核心 · 自博弈 · 长记忆 · 神之一手 · 时空对决</span>
+                <span><strong>定位</strong> 智能陪练</span>
+                <span><strong>形态</strong> 软件 + 硬件</span>
+                <span><strong>核心</strong> 自博弈 · 长记忆 · 实时球路生成</span>
+                <span><strong>目标</strong> 探索未知战术边界</span>
             </div>
         </div>
         <div class="hero-logo">
