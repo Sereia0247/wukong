@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>AETHER — 探索人类尚未抵达的战术边界。</title>
+    <title>AETHER — 产品决策档案</title>
     <style>
         * {
             margin: 0;
@@ -21,7 +21,7 @@
         }
 
         .container {
-            max-width: 1260px;
+            max-width: 1000px;
             margin: 0 auto;
         }
 
@@ -29,40 +29,25 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 16px 0 40px;
+            padding: 16px 0 32px;
             border-bottom: 1px solid rgba(255, 255, 255, 0.04);
             flex-wrap: wrap;
             gap: 12px;
         }
 
         .logo {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-size: 28px;
+            font-size: 24px;
             font-weight: 300;
             letter-spacing: 4px;
             color: #f0c060;
         }
 
-        .logo img {
-            height: 36px;
-            width: auto;
-        }
-
-        .logo .sub {
-            font-weight: 300;
-            font-size: 13px;
-            letter-spacing: 2px;
-            color: rgba(255, 255, 255, 0.12);
-        }
-
         .nav-links {
             display: flex;
-            gap: 28px;
-            font-size: 13px;
+            gap: 20px;
+            font-size: 12px;
             font-weight: 300;
-            color: rgba(255, 255, 255, 0.3);
+            color: rgba(255, 255, 255, 0.2);
             flex-wrap: wrap;
         }
 
@@ -79,29 +64,29 @@
         .hero {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            padding: 60px 0 80px;
+            gap: 40px;
+            padding: 40px 0 50px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.03);
             align-items: center;
         }
 
         .hero-text .tag {
             display: inline-block;
-            background: rgba(240, 192, 96, 0.12);
+            background: rgba(240, 192, 96, 0.08);
             color: #f0c060;
             font-size: 11px;
-            letter-spacing: 3px;
-            padding: 4px 16px;
+            letter-spacing: 2px;
+            padding: 2px 14px;
             border-radius: 40px;
-            border: 1px solid rgba(240, 192, 96, 0.08);
-            margin-bottom: 20px;
+            margin-bottom: 16px;
         }
 
         .hero-text h1 {
-            font-size: 46px;
+            font-size: 38px;
             font-weight: 300;
             letter-spacing: -0.02em;
-            line-height: 1.1;
-            margin-bottom: 12px;
+            line-height: 1.15;
+            margin-bottom: 10px;
         }
 
         .hero-text h1 .gold {
@@ -109,115 +94,85 @@
         }
 
         .hero-text .sub {
-            font-size: 18px;
-            font-weight: 300;
-            color: rgba(255, 255, 255, 0.4);
-            margin-bottom: 16px;
-            letter-spacing: 1px;
-        }
-
-        .hero-text .desc {
-            font-size: 15px;
-            font-weight: 300;
+            font-size: 17px;
             color: rgba(255, 255, 255, 0.3);
-            max-width: 480px;
-            line-height: 1.9;
-            margin-bottom: 28px;
+            font-weight: 300;
+            max-width: 600px;
         }
 
         .hero-text .meta {
+            margin-top: 18px;
             font-size: 13px;
-            font-weight: 300;
-            color: rgba(255, 255, 255, 0.15);
-            border-top: 1px solid rgba(255, 255, 255, 0.04);
-            padding-top: 18px;
+            color: rgba(255, 255, 255, 0.1);
             display: flex;
-            gap: 32px;
+            gap: 28px;
             flex-wrap: wrap;
+            border-top: 1px solid rgba(255, 255, 255, 0.03);
+            padding-top: 16px;
         }
 
-        .hero-text .meta strong {
-            color: rgba(255, 255, 255, 0.35);
-            font-weight: 400;
+        .hero-text .meta span {
+            color: rgba(255, 255, 255, 0.15);
         }
 
-        .hero-visual {
+        .hero-logo {
             display: flex;
             justify-content: center;
             align-items: center;
         }
 
-        .hero-visual img {
+        .hero-logo .logo-box {
             width: 100%;
-            max-width: 420px;
+            max-width: 300px;
+            aspect-ratio: 1/1;
+            background: radial-gradient(ellipse at center, rgba(240, 192, 96, 0.02) 0%, transparent 70%);
             border-radius: 24px;
-            border: 1px solid rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(240, 192, 96, 0.04);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
         }
 
-        .philosophy-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            gap: 24px;
-            margin-top: 24px;
+        .hero-logo .logo-box img {
+            width: 80%;
+            height: auto;
+            max-width: 200px;
+            opacity: 0.7;
         }
 
-        .philosophy-card {
-            background: rgba(255, 255, 255, 0.015);
-            border-radius: 14px;
-            padding: 24px 22px;
-            border: 1px solid rgba(255, 255, 255, 0.04);
-            text-align: center;
-            transition: all 0.3s ease;
+        .hero-logo .logo-box .brand-sub {
+            font-size: 12px;
+            letter-spacing: 6px;
+            color: rgba(255, 255, 255, 0.06);
+            margin-top: 12px;
         }
 
-        .philosophy-card:hover {
-            border-color: rgba(240, 192, 96, 0.12);
-            background: rgba(255, 255, 255, 0.025);
+        .gap-section {
+            padding: 48px 0 36px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.03);
         }
 
-        .philosophy-card .icon {
-            font-size: 32px;
-            display: block;
-            margin-bottom: 8px;
-        }
-
-        .philosophy-card .tradition {
-            font-size: 16px;
-            font-weight: 400;
-            color: #f0c060;
-            margin-bottom: 4px;
-        }
-
-        .philosophy-card .meaning {
-            font-size: 14px;
-            color: rgba(255, 255, 255, 0.4);
-            margin-bottom: 6px;
-            font-style: italic;
-        }
-
-        .philosophy-card .relation {
-            font-size: 13px;
-            color: rgba(255, 255, 255, 0.2);
-            line-height: 1.8;
+        .gap-section:last-of-type {
+            border-bottom: none;
         }
 
         .section-label {
             font-size: 11px;
-            font-weight: 300;
-            letter-spacing: 3px;
+            letter-spacing: 2px;
             text-transform: uppercase;
             color: #f0c060;
-            margin-bottom: 6px;
-            opacity: 0.6;
+            opacity: 0.3;
+            margin-bottom: 4px;
         }
 
         .section-title {
-            font-size: 30px;
+            font-size: 26px;
             font-weight: 300;
             letter-spacing: -0.02em;
             line-height: 1.2;
-            margin-bottom: 12px;
-            color: #e8e6e0;
+            margin-bottom: 8px;
         }
 
         .section-title .highlight {
@@ -227,1238 +182,1260 @@
         .section-desc {
             font-size: 15px;
             font-weight: 300;
-            color: rgba(255, 255, 255, 0.3);
+            color: rgba(255, 255, 255, 0.25);
             max-width: 700px;
             line-height: 1.8;
         }
 
-        .grid-2 {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-            margin-top: 24px;
-        }
-
-        .grid-3 {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-            margin-top: 24px;
-        }
-
-        .grid-4 {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 16px;
-            margin-top: 24px;
-        }
-
-        .grid-5 {
-            display: grid;
-            grid-template-columns: repeat(5, 1fr);
-            gap: 14px;
-            margin-top: 24px;
-        }
-
-        .card {
-            background: rgba(255, 255, 255, 0.02);
-            border-radius: 14px;
-            padding: 24px 22px;
+        /* ===== 决策模块 ===== */
+        .decision-section {
+            background: rgba(255, 255, 255, 0.015);
+            border-radius: 16px;
+            padding: 32px 36px;
             border: 1px solid rgba(255, 255, 255, 0.04);
-            transition: all 0.3s ease;
+            margin-top: 12px;
         }
 
-        .card:hover {
-            transform: translateY(-3px);
-            background: rgba(255, 255, 255, 0.04);
-            border-color: rgba(240, 192, 96, 0.12);
-        }
-
-        .card .icon {
-            font-size: 28px;
-            display: block;
-            margin-bottom: 8px;
-        }
-
-        .card h4 {
-            font-size: 16px;
-            font-weight: 400;
-            color: #e8e6e0;
-            margin-bottom: 4px;
-        }
-
-        .card p {
-            font-size: 13px;
-            font-weight: 300;
-            color: rgba(255, 255, 255, 0.3);
-            line-height: 1.8;
-        }
-
-        .card .metric-value {
-            font-size: 26px;
-            font-weight: 300;
-            color: #f0c060;
-            display: block;
-            margin-bottom: 2px;
-        }
-
-        .gap-section {
-            padding: 60px 0 40px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.03);
-        }
-
-        .gap-section:last-of-type {
-            border-bottom: none;
-        }
-
-        .pill {
-            display: inline-block;
-            background: rgba(240, 192, 96, 0.06);
-            color: #f0c060;
-            font-size: 11px;
-            padding: 2px 14px;
-            border-radius: 20px;
-            border: 1px solid rgba(240, 192, 96, 0.06);
-            margin: 2px 4px 2px 0;
-        }
-
-        .pill-white {
-            display: inline-block;
-            background: rgba(255, 255, 255, 0.03);
-            color: rgba(255, 255, 255, 0.15);
-            font-size: 11px;
-            padding: 2px 14px;
-            border-radius: 20px;
-            border: 1px solid rgba(255, 255, 255, 0.04);
-            margin: 2px 4px 2px 0;
+        .decision-section .intro {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.2);
+            margin-bottom: 24px;
+            line-height: 1.9;
+            padding-left: 16px;
+            border-left: 2px solid rgba(240, 192, 96, 0.1);
         }
 
         .timeline {
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr 1fr;
-            gap: 16px;
-            margin-top: 24px;
+            display: flex;
+            flex-direction: column;
+            padding-left: 24px;
+            border-left: 1.5px solid rgba(240, 192, 96, 0.08);
         }
 
-        .phase {
-            background: rgba(255, 255, 255, 0.015);
-            border-radius: 14px;
-            padding: 20px 18px;
-            border: 1px solid rgba(255, 255, 255, 0.04);
-            text-align: center;
-            transition: all 0.3s ease;
+        .timeline-item {
+            padding-bottom: 24px;
+            padding-left: 18px;
+            position: relative;
         }
 
-        .phase:hover {
-            border-color: rgba(240, 192, 96, 0.1);
+        .timeline-item:last-child {
+            padding-bottom: 0;
         }
 
-        .phase .phase-num {
-            font-size: 12px;
-            font-weight: 300;
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -29px;
+            top: 6px;
+            width: 12px;
+            height: 12px;
+            background: #f0c060;
+            border-radius: 50%;
+            border: 2px solid #0b0e12;
+            box-shadow: 0 0 0 1.5px #f0c060;
+            opacity: 0.6;
+        }
+
+        .timeline-item .step {
+            display: inline-block;
+            font-size: 10px;
+            font-weight: 500;
             color: #f0c060;
-            letter-spacing: 2px;
+            letter-spacing: 0.5px;
             text-transform: uppercase;
-            opacity: 0.5;
+            background: rgba(240, 192, 96, 0.04);
+            padding: 0 10px;
+            border-radius: 12px;
+            border: 1px solid rgba(240, 192, 96, 0.04);
+            opacity: 0.6;
+            margin-bottom: 2px;
         }
 
-        .phase .phase-title {
-            font-size: 15px;
+        .timeline-item .question {
+            font-size: 16px;
             font-weight: 400;
             color: #e8e6e0;
-            margin: 6px 0 4px;
+            margin: 2px 0 4px;
         }
 
-        .phase .phase-desc {
-            font-size: 12px;
-            font-weight: 300;
+        .timeline-item .question .tag-icon {
+            margin-right: 8px;
+            font-size: 16px;
+        }
+
+        .timeline-item .answer {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.3);
+            line-height: 1.9;
+        }
+
+        .timeline-item .answer .hl {
+            color: #f0c060;
+            font-weight: 400;
+        }
+
+        .timeline-item .answer .divider {
+            margin: 6px 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.03);
+        }
+
+        .timeline-item .answer .insight {
+            background: rgba(240, 192, 96, 0.02);
+            border-left: 2px solid rgba(240, 192, 96, 0.08);
+            padding: 8px 14px;
+            margin: 6px 0 2px;
+            border-radius: 0 6px 6px 0;
+            color: rgba(255, 255, 255, 0.2);
+            font-style: italic;
+            font-size: 13px;
+        }
+
+        .timeline-item .answer .story-block {
+            background: rgba(240, 192, 96, 0.02);
+            border: 1px solid rgba(240, 192, 96, 0.04);
+            border-radius: 10px;
+            padding: 12px 16px;
+            margin: 8px 0 4px;
+        }
+
+        .timeline-item .answer .story-block .pair {
+            font-size: 13px;
             color: rgba(255, 255, 255, 0.2);
             line-height: 1.8;
         }
 
-        .phase .phase-status {
-            font-size: 11px;
-            color: #f0c060;
-            margin-top: 4px;
-            opacity: 0.6;
-        }
-
-        .table-wrap {
-            overflow-x: auto;
-            margin-top: 20px;
-        }
-
-        .table-wrap table {
-            width: 100%;
-            border-collapse: collapse;
-            font-size: 13px;
-            min-width: 600px;
-        }
-
-        .table-wrap th {
-            background: rgba(255, 255, 255, 0.03);
-            color: #f0c060;
-            padding: 12px 16px;
-            text-align: left;
+        .timeline-item .answer .story-block .pair strong {
+            color: rgba(255, 255, 255, 0.35);
             font-weight: 400;
-            font-size: 12px;
-            letter-spacing: 0.5px;
-            border-bottom: 1px solid rgba(240, 192, 96, 0.1);
         }
 
-        .table-wrap td {
-            padding: 12px 16px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.04);
-            color: rgba(255, 255, 255, 0.4);
-            font-size: 13px;
-        }
-
-        .table-wrap td:first-child {
-            color: #e8e6e0;
-        }
-
-        .table-wrap .highlight-row td {
-            color: #f0c060;
-        }
-
-        .footer {
-            padding: 40px 0 20px;
-            text-align: center;
-            color: rgba(255, 255, 255, 0.06);
-            font-size: 12px;
-            font-weight: 300;
-            border-top: 1px solid rgba(255, 255, 255, 0.03);
-            margin-top: 40px;
-        }
-
-        .hardware-spec {
+        .card-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr 1fr 1fr;
-            gap: 12px;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
             margin-top: 16px;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.015);
+            border-radius: 12px;
+            padding: 20px 18px;
+            border: 1px solid rgba(255, 255, 255, 0.04);
+        }
+
+        .card .icon {
+            font-size: 24px;
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        .card h4 {
+            font-size: 15px;
+            font-weight: 400;
+            color: #e8e6e0;
+            margin-bottom: 2px;
+        }
+
+        .card p {
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.2);
+            line-height: 1.8;
+        }
+
+        .card .tag-sm {
+            display: inline-block;
+            font-size: 10px;
+            color: rgba(240, 192, 96, 0.2);
+            border: 1px solid rgba(240, 192, 96, 0.04);
+            padding: 0 8px;
+            border-radius: 12px;
+            margin-top: 4px;
+        }
+
+        .pill {
+            display: inline-block;
+            background: rgba(240, 192, 96, 0.04);
+            color: rgba(240, 192, 96, 0.35);
+            font-size: 11px;
+            padding: 1px 12px;
+            border-radius: 20px;
+            border: 1px solid rgba(240, 192, 96, 0.04);
+            margin: 2px 4px 2px 0;
+        }
+
+        .pill-light {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.02);
+            color: rgba(255, 255, 255, 0.12);
+            font-size: 11px;
+            padding: 1px 12px;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.03);
+            margin: 2px 4px 2px 0;
+        }
+
+        .spec-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 10px;
+            margin-top: 12px;
         }
 
         .spec-item {
             background: rgba(255, 255, 255, 0.015);
-            border-radius: 10px;
-            padding: 14px 12px;
+            border-radius: 8px;
+            padding: 12px 10px;
             text-align: center;
-            border: 1px solid rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.03);
         }
 
         .spec-item .value {
-            font-size: 20px;
+            font-size: 18px;
             font-weight: 300;
             color: #f0c060;
+            opacity: 0.7;
         }
 
         .spec-item .label {
             font-size: 11px;
-            color: rgba(255, 255, 255, 0.15);
+            color: rgba(255, 255, 255, 0.1);
             margin-top: 2px;
         }
 
-        .audience-pyramid {
+        .hardware-note {
+            background: rgba(255, 255, 255, 0.015);
+            border-radius: 12px;
+            padding: 20px 24px;
+            border: 1px solid rgba(255, 255, 255, 0.03);
+            margin-top: 12px;
+        }
+
+        .hardware-note .sub {
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.12);
+            letter-spacing: 1px;
+            margin-bottom: 4px;
+        }
+
+        .hardware-note p {
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.2);
+            line-height: 1.9;
+        }
+
+        .hardware-note p strong {
+            color: rgba(255, 255, 255, 0.25);
+            font-weight: 400;
+        }
+
+        .eye-grid {
             display: grid;
             grid-template-columns: 1fr 1fr 1fr;
-            gap: 16px;
-            margin-top: 24px;
+            gap: 10px;
+            margin-top: 10px;
         }
 
-        .pyramid-item {
+        .eye-item {
             background: rgba(255, 255, 255, 0.015);
-            border-radius: 14px;
-            padding: 20px 18px;
-            border: 1px solid rgba(255, 255, 255, 0.04);
+            border-radius: 8px;
+            padding: 10px 12px;
             text-align: center;
-            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.03);
         }
 
-        .pyramid-item:hover {
-            border-color: rgba(240, 192, 96, 0.1);
-        }
-
-        .pyramid-item .level {
-            font-size: 12px;
-            color: #f0c060;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            opacity: 0.6;
-        }
-
-        .pyramid-item .group {
-            font-size: 18px;
-            font-weight: 400;
-            color: #e8e6e0;
-            margin: 6px 0 4px;
-        }
-
-        .pyramid-item .desc {
-            font-size: 13px;
-            color: rgba(255, 255, 255, 0.25);
-            line-height: 1.8;
-        }
-
-        .pyramid-item .priority {
+        .eye-item .state {
             font-size: 11px;
             color: #f0c060;
-            margin-top: 6px;
-            opacity: 0.5;
+            opacity: 0.3;
         }
 
-        .pyramid-item.top {
-            border-top: 3px solid rgba(240, 192, 96, 0.3);
-            max-width: 80%;
-            margin: 0 auto;
+        .eye-item .desc {
+            font-size: 11px;
+            color: rgba(255, 255, 255, 0.1);
+            margin-top: 2px;
         }
 
-        .pyramid-item.mid {
-            border-top: 3px solid rgba(240, 192, 96, 0.2);
-        }
-
-        .pyramid-item.base {
-            border-top: 3px solid rgba(240, 192, 96, 0.1);
-        }
-
-        .memory-section {
+        .memory-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            gap: 20px;
-            margin-top: 24px;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 14px;
+            margin-top: 16px;
         }
 
         .memory-card {
             background: rgba(255, 255, 255, 0.015);
-            border-radius: 14px;
-            padding: 20px 18px;
-            border: 1px solid rgba(255, 255, 255, 0.04);
+            border-radius: 10px;
+            padding: 16px 16px;
+            border: 1px solid rgba(255, 255, 255, 0.03);
             text-align: center;
         }
 
         .memory-card .icon {
-            font-size: 32px;
+            font-size: 26px;
             display: block;
-            margin-bottom: 6px;
-        }
-
-        .memory-card h4 {
-            font-size: 15px;
-            font-weight: 400;
-            color: #e8e6e0;
             margin-bottom: 4px;
         }
 
+        .memory-card h4 {
+            font-size: 14px;
+            font-weight: 400;
+            color: #e8e6e0;
+            margin-bottom: 2px;
+        }
+
         .memory-card p {
-            font-size: 13px;
-            color: rgba(255, 255, 255, 0.25);
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.15);
             line-height: 1.8;
         }
 
         .security-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr 1fr 1fr;
-            gap: 16px;
-            margin-top: 24px;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 12px;
+            margin-top: 16px;
         }
 
         .security-card {
             background: rgba(255, 255, 255, 0.015);
-            border-radius: 14px;
-            padding: 20px 16px;
-            border: 1px solid rgba(255, 255, 255, 0.04);
+            border-radius: 10px;
+            padding: 14px 14px;
+            border: 1px solid rgba(255, 255, 255, 0.03);
             text-align: center;
-            transition: all 0.3s ease;
-        }
-
-        .security-card:hover {
-            border-color: rgba(240, 192, 96, 0.1);
         }
 
         .security-card .icon {
-            font-size: 28px;
+            font-size: 22px;
             display: block;
-            margin-bottom: 6px;
-        }
-
-        .security-card h4 {
-            font-size: 15px;
-            font-weight: 400;
-            color: #e8e6e0;
             margin-bottom: 4px;
         }
 
-        .security-card p {
-            font-size: 12px;
-            color: rgba(255, 255, 255, 0.2);
-            line-height: 1.8;
-        }
-
-        .tech-detail {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 16px;
-            margin-top: 20px;
-        }
-
-        .tech-item {
-            background: rgba(255, 255, 255, 0.015);
-            border-radius: 12px;
-            padding: 16px 18px;
-            border: 1px solid rgba(255, 255, 255, 0.04);
-        }
-
-        .tech-item .tech-label {
-            font-size: 11px;
-            color: #f0c060;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            opacity: 0.6;
-        }
-
-        .tech-item .tech-name {
-            font-size: 15px;
+        .security-card h4 {
+            font-size: 13px;
             font-weight: 400;
             color: #e8e6e0;
-            margin: 4px 0 2px;
+            margin-bottom: 2px;
         }
 
-        .tech-item .tech-desc {
-            font-size: 12px;
-            color: rgba(255, 255, 255, 0.2);
+        .security-card p {
+            font-size: 11px;
+            color: rgba(255, 255, 255, 0.12);
             line-height: 1.8;
-        }
-
-        .tech-item .tech-metric {
-            font-size: 12px;
-            color: #f0c060;
-            margin-top: 4px;
-            opacity: 0.5;
         }
 
         .pricing-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            gap: 16px;
-            margin-top: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 12px;
+            margin-top: 16px;
         }
 
         .pricing-card {
             background: rgba(255, 255, 255, 0.015);
-            border-radius: 14px;
-            padding: 20px 18px;
-            border: 1px solid rgba(255, 255, 255, 0.04);
+            border-radius: 10px;
+            padding: 16px 14px;
+            border: 1px solid rgba(255, 255, 255, 0.03);
             text-align: center;
-            transition: all 0.3s ease;
-        }
-
-        .pricing-card:hover {
-            border-color: rgba(240, 192, 96, 0.1);
         }
 
         .pricing-card .version {
-            font-size: 12px;
+            font-size: 10px;
             color: #f0c060;
-            letter-spacing: 2px;
+            letter-spacing: 1px;
             text-transform: uppercase;
-            opacity: 0.6;
+            opacity: 0.25;
         }
 
-        .pricing-card .price-hardware {
-            font-size: 24px;
+        .pricing-card .price {
+            font-size: 22px;
             font-weight: 300;
             color: #e8e6e0;
-            margin: 6px 0 2px;
+            margin: 4px 0 2px;
         }
 
-        .pricing-card .price-account {
-            font-size: 14px;
-            color: rgba(255, 255, 255, 0.3);
-            margin-bottom: 6px;
+        .pricing-card .sub {
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.15);
+            margin-bottom: 4px;
         }
 
         .pricing-card .desc {
-            font-size: 13px;
-            color: rgba(255, 255, 255, 0.2);
+            font-size: 11px;
+            color: rgba(255, 255, 255, 0.1);
             line-height: 1.8;
         }
 
-        .iteration-flow {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 12px;
-            flex-wrap: wrap;
-            margin-top: 16px;
-            font-size: 13px;
-            color: rgba(255, 255, 255, 0.2);
-        }
-
-        .iteration-flow .step {
-            background: rgba(255, 255, 255, 0.03);
-            padding: 6px 16px;
-            border-radius: 20px;
-            border: 1px solid rgba(255, 255, 255, 0.04);
-        }
-
-        .iteration-flow .arrow {
-            color: rgba(255, 255, 255, 0.05);
-        }
-
-        .hardware-desc {
-            background: rgba(255, 255, 255, 0.015);
-            border-radius: 14px;
-            padding: 24px 28px;
-            border: 1px solid rgba(255, 255, 255, 0.04);
-            margin-top: 16px;
-        }
-
-        .hardware-desc .title {
-            font-size: 14px;
-            font-weight: 400;
-            color: #f0c060;
-            margin-bottom: 8px;
-            letter-spacing: 1px;
-        }
-
-        .hardware-desc p {
-            font-size: 13px;
-            color: rgba(255, 255, 255, 0.25);
-            line-height: 1.9;
-        }
-
-        .eye-spec {
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            gap: 12px;
-            margin-top: 12px;
-        }
-
-        .eye-item {
-            background: rgba(255, 255, 255, 0.015);
-            border-radius: 10px;
-            padding: 12px 16px;
-            border: 1px solid rgba(255, 255, 255, 0.04);
+        .footer {
+            padding: 32px 0 16px;
             text-align: center;
+            color: rgba(255, 255, 255, 0.04);
+            font-size: 11px;
+            border-top: 1px solid rgba(255, 255, 255, 0.02);
+            margin-top: 32px;
         }
 
-        .eye-item .state {
-            font-size: 12px;
-            color: #f0c060;
-            opacity: 0.6;
+        .video-wrapper {
+            margin-top: 14px;
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.03);
         }
 
-        .eye-item .desc {
-            font-size: 12px;
-            color: rgba(255, 255, 255, 0.2);
-            margin-top: 2px;
+        .video-wrapper video {
+            width: 100%;
+            display: block;
+            border-radius: 12px;
         }
 
         .proto-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-            gap: 14px;
-            margin-top: 24px;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 10px;
+            margin-top: 16px;
         }
 
         .proto-item {
             background: rgba(255, 255, 255, 0.02);
-            border-radius: 12px;
+            border-radius: 10px;
             overflow: hidden;
             border: 1px solid rgba(255, 255, 255, 0.04);
             aspect-ratio: 9/16;
             display: flex;
             align-items: center;
             justify-content: center;
+            color: rgba(255, 255, 255, 0.06);
+            font-size: 11px;
+            transition: border-color 0.2s;
+        }
+
+        .proto-item:hover {
+            border-color: rgba(240, 192, 96, 0.08);
         }
 
         .proto-item img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            border-radius: 10px;
+            border-radius: 8px;
         }
 
-        .video-wrapper {
-            margin-top: 20px;
-            background: rgba(255, 255, 255, 0.02);
-            border-radius: 14px;
-            overflow: hidden;
-            border: 1px solid rgba(255, 255, 255, 0.04);
+        .proto-item .placeholder {
+            text-align: center;
+            line-height: 1.6;
         }
 
-        .video-wrapper video {
-            width: 100%;
+        .proto-item .placeholder .icon {
+            font-size: 24px;
             display: block;
-            border-radius: 14px;
+            margin-bottom: 4px;
+            opacity: 0.15;
+        }
+
+        .iteration-flow {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-top: 12px;
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.12);
+        }
+
+        .iteration-flow .step {
+            background: rgba(255, 255, 255, 0.02);
+            padding: 4px 14px;
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.03);
+        }
+
+        .iteration-flow .arrow {
+            color: rgba(255, 255, 255, 0.04);
+        }
+
+        .badcase-block {
+            background: rgba(255, 60, 60, 0.02);
+            border-radius: 10px;
+            padding: 14px 18px;
+            border: 1px solid rgba(255, 60, 60, 0.04);
+            margin-top: 12px;
+        }
+
+        .badcase-block .label {
+            font-size: 10px;
+            color: rgba(255, 60, 60, 0.15);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .badcase-block p {
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.15);
+            line-height: 1.8;
+            margin-top: 2px;
+        }
+
+        .badcase-block p strong {
+            color: rgba(255, 255, 255, 0.2);
+            font-weight: 400;
+        }
+
+        /* ===== 联系我模块 ===== */
+        .contact-section {
+            padding: 40px 0 20px;
+            text-align: center;
+        }
+
+        .contact-section .contact-inner {
+            background: rgba(255, 255, 255, 0.015);
+            border-radius: 16px;
+            padding: 32px 40px;
+            border: 1px solid rgba(240, 192, 96, 0.04);
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .contact-section .contact-inner .label {
+            font-size: 10px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: rgba(240, 192, 96, 0.15);
+            margin-bottom: 6px;
+        }
+
+        .contact-section .contact-inner .name {
+            font-size: 22px;
+            font-weight: 300;
+            color: #e8e6e0;
+            letter-spacing: 2px;
+        }
+
+        .contact-section .contact-inner .contact-row {
+            display: flex;
+            justify-content: center;
+            gap: 20px 32px;
+            flex-wrap: wrap;
+            margin: 8px 0 12px;
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.15);
+        }
+
+        .contact-section .contact-inner .contact-row a {
+            color: rgba(255, 255, 255, 0.15);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .contact-section .contact-inner .contact-row a:hover {
+            color: #f0c060;
+        }
+
+        .contact-section .contact-inner .btn-contact {
+            display: inline-block;
+            background: rgba(240, 192, 96, 0.06);
+            color: #f0c060;
+            font-size: 13px;
+            font-weight: 300;
+            padding: 10px 32px;
+            border-radius: 40px;
+            border: 1px solid rgba(240, 192, 96, 0.06);
+            text-decoration: none;
+            transition: all 0.2s;
+            letter-spacing: 1px;
+        }
+
+        .contact-section .contact-inner .btn-contact:hover {
+            background: rgba(240, 192, 96, 0.12);
+            border-color: rgba(240, 192, 96, 0.12);
+        }
+
+        /* 返回顶部按钮 */
+        .back-top {
+            display: inline-block;
+            color: rgba(255, 255, 255, 0.06);
+            font-size: 11px;
+            text-decoration: none;
+            margin-top: 8px;
+            transition: color 0.2s;
+        }
+
+        .back-top:hover {
+            color: rgba(255, 255, 255, 0.15);
         }
 
         @media (max-width: 768px) {
             .hero {
                 grid-template-columns: 1fr;
+                gap: 24px;
                 text-align: center;
-                gap: 30px;
-                padding: 40px 0 60px;
             }
-
-            .hero-text .desc {
-                margin: 0 auto;
+            .hero-text .sub {
+                max-width: 100%;
             }
-
             .hero-text .meta {
                 justify-content: center;
             }
-
-            .grid-2,
-            .grid-3,
-            .grid-4,
-            .grid-5,
-            .timeline,
-            .philosophy-grid,
-            .hardware-spec,
-            .audience-pyramid,
-            .memory-section,
-            .security-grid,
-            .tech-detail,
-            .pricing-grid,
-            .eye-spec,
+            .hero-logo .logo-box {
+                max-width: 200px;
+            }
             .proto-grid {
-                grid-template-columns: 1fr;
+                grid-template-columns: repeat(4, 1fr);
             }
-
-            .hero-text h1 {
-                font-size: 34px;
+            .contact-section .contact-inner {
+                padding: 24px 20px;
             }
-
-            .section-title {
-                font-size: 24px;
-            }
-
-            .nav-links {
-                display: none;
-            }
-
-            .hero-visual img {
-                max-width: 280px;
-            }
-
-            .pyramid-item.top {
-                max-width: 100%;
-            }
-
-            .iteration-flow {
+            .contact-section .contact-inner .contact-row {
                 flex-direction: column;
-                gap: 8px;
+                gap: 4px;
             }
         }
 
-        @media (max-width: 480px) {
-            .hero-text h1 {
+        @media (max-width: 640px) {
+            body {
+                padding: 24px 16px;
+            }
+            .hero h1 {
                 font-size: 28px;
             }
-
             .section-title {
                 font-size: 20px;
             }
-
-            .phase {
-                padding: 16px 12px;
+            .nav-links {
+                display: none;
             }
-
-            .hero-visual img {
-                max-width: 200px;
+            .decision-section {
+                padding: 20px 16px;
+            }
+            .timeline {
+                padding-left: 16px;
+            }
+            .timeline-item {
+                padding-left: 12px;
+            }
+            .timeline-item::before {
+                left: -23px;
+                width: 10px;
+                height: 10px;
+            }
+            .eye-grid {
+                grid-template-columns: 1fr;
+            }
+            .card-grid {
+                grid-template-columns: 1fr;
+            }
+            .security-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            .pricing-grid {
+                grid-template-columns: 1fr;
+            }
+            .memory-grid {
+                grid-template-columns: 1fr;
+            }
+            .spec-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            .proto-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            .iteration-flow {
+                flex-direction: column;
+                gap: 6px;
             }
         }
     </style>
 </head>
 <body>
 
-    <div class="container">
+<div class="container">
 
-        <div class="nav">
-            <div class="logo">
-                <img src="assets/logo.png" alt="A神Logo" />
-                A神 <span class="sub">AETHER</span>
+    <!-- ===== 导航 ===== -->
+    <nav class="nav" id="top">
+        <div class="logo">A神</div>
+        <div class="nav-links">
+            <a href="#decisions">决策</a>
+            <a href="#position">定位</a>
+            <a href="#capability">能力</a>
+            <a href="#audience">受众</a>
+            <a href="#tech">技术</a>
+            <a href="#hardware">硬件</a>
+            <a href="#memory">记忆</a>
+            <a href="#security">保密</a>
+            <a href="#pricing">定价</a>
+            <a href="#iteration">迭代</a>
+            <a href="#prototype">原型</a>
+            <a href="#demo">Demo</a>
+            <a href="#contact">联系</a>
+        </div>
+    </nav>
+
+    <!-- ===== Hero ===== -->
+    <div class="hero">
+        <div class="hero-text">
+            <div class="tag">产品决策档案 · 2026</div>
+            <h1>A神 · <span class="gold">隔网球类智能陪练</span></h1>
+            <div class="sub">一份从 0 到 1 的产品经理思考轨迹 · 9 个关键决策节点</div>
+            <div class="meta">
+                <span>定位 · 智能陪练</span>
+                <span>形态 · 具身智能</span>
+                <span>受众 · 省队 / 青训</span>
+                <span>核心 · 自博弈 · 长记忆 · 神之一手 · 时空对决</span>
             </div>
-            <div class="nav-links">
-                <a href="#philosophy">哲学</a>
-                <a href="#position">定位</a>
-                <a href="#capability">能力</a>
-                <a href="#audience">受众</a>
-                <a href="#tech">技术</a>
-                <a href="#hardware">硬件</a>
-                <a href="#memory">记忆</a>
-                <a href="#security">保密</a>
-                <a href="#pricing">定价</a>
-                <a href="#competitors">竞品</a>
-                <a href="#lifecycle">路径</a>
-                <a href="#coldstart">冷启动</a>
-                <a href="#metrics">指标</a>
-                <a href="#iteration">迭代</a>
-                <a href="#prototype">原型</a>
-                <a href="#demo">Demo</a>
+        </div>
+        <div class="hero-logo">
+            <div class="logo-box">
+                <img src="assets/logo.png" alt="A神Logo" />
+                <div class="brand-sub">AETHER · 战术探索者</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- ===== 决策轨迹 ===== -->
+    <!-- ============================================================ -->
+    <section id="decisions" class="gap-section">
+        <div class="section-label">🧠 决策轨迹</div>
+        <div class="section-title">从理想到落地，<span class="highlight">我是怎么一步步选的？</span></div>
+
+        <div class="decision-section">
+            <div class="intro">
+                这是一份真实的产品决策复盘。以下每一步都是我在定义 A 神过程中经历过的取舍——
+                有些是方向性的，有些是技术性的，但每一个选择背后，都有它真实的逻辑。
+            </div>
+
+            <div class="timeline">
+
+                <!-- ===== 决策0 ===== -->
+                <div class="timeline-item">
+                    <div class="step">决策 00 · 起点</div>
+                    <div class="question"><span class="tag-icon">⚡</span>从 AI 裁判，到 AI 陪练</div>
+                    <div class="answer">
+                        最开始想的是做 AI 裁判。2024 年国际奥委会允许 AI 作为辅助工具进入奥运全链路，我觉得这是一个有落地可能的方向，也有商业前景。
+                        <div class="divider"></div>
+                        但后来放弃了这个想法。原因是：与其在“评判”这个环节创造价值，不如在“训练”这个环节创造价值——从根源上帮助运动员提升，而不是在结果上做判断。
+                        <div class="divider"></div>
+                        而且如果只是一个奥运赛事里的辅助工具，它的要求极高，而且是现阶段我们很难企及的高度。与其在那个位置上做一个小角色，不如在一个更根本的位置上做出真正有意义的东西。
+                        <div class="insight">
+                            “与其在赛场上评判运动员，不如在训练场上帮助他们变得更强。”
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ===== 决策1 ===== -->
+                <div class="timeline-item">
+                    <div class="step">决策 01 · 定位</div>
+                    <div class="question"><span class="tag-icon">🎯</span>AI 教练，还是 AI 陪练？</div>
+                    <div class="answer">
+                        最开始想做的是「AI 教练」。但后来发现：国家级教练本身有极高的权威性，他们不一定会拥抱 AI。而且如果定位是「教练」，意味着要替代人的判断——这需要巨大的品牌信任成本，短期内几乎不可能落地。
+                        <div class="divider"></div>
+                        但「陪练」不一样。它不替代人的判断，只是帮运动员练得更多、更好。陪练的受众也比教练大得多——每一个有潜力的选手都需要陪练。
+                        <br />
+                        <span style="color:rgba(255,255,255,0.1);font-size:13px;">→ 定位从 AI 教练 转向 AI 陪练。</span>
+                    </div>
+                </div>
+
+                <!-- ===== 决策2 ===== -->
+                <div class="timeline-item">
+                    <div class="step">决策 02 · 受众</div>
+                    <div class="question"><span class="tag-icon">👥</span>国家队，还是青训队？</div>
+                    <div class="answer">
+                        国家队很难进，品牌壁垒太高。但青训队不一样——他们有潜力、有动力、也有时间试错。而且青训队的训练资源本来就有限，一个好的陪练设备对他们来说价值更大。
+                        <br />
+                        <span style="color:rgba(255,255,255,0.1);font-size:13px;">→ 目标受众从 国家队 转向 省队 / 青训队。</span>
+                    </div>
+                </div>
+
+                <!-- ===== 决策3 ===== -->
+                <div class="timeline-item">
+                    <div class="step">决策 03 · 形态</div>
+                    <div class="question"><span class="tag-icon">🤖</span>虚拟 AI，还是具身智能？</div>
+                    <div class="answer">
+                        虚拟 AI 只能给出方案，告诉你「这球应该怎么打」——但还是需要人打出来。这个限制太大了，训练效果完全取决于有没有人愿意配合。
+                        <div class="divider"></div>
+                        但具身智能不一样：它可以真正打出来。调参数、变节奏、甚至打出一些人类教练打不出的球路。它不是告诉你答案，而是直接把答案打到你面前。
+                        <br />
+                        <span style="color:rgba(255,255,255,0.1);font-size:13px;">→ 形态选择了 具身智能 · 实体机器人。</span>
+                    </div>
+                </div>
+
+                <!-- ===== 决策4 ===== -->
+                <div class="timeline-item">
+                    <div class="step">决策 04 · 感知系统</div>
+                    <div class="question"><span class="tag-icon">📷</span>YOLOv8、v11、还是 v11s？</div>
+                    <div class="answer">
+                        感知系统是这套设备的核心——它要看清楚运动员的每一个动作细节。
+                        <div class="divider"></div>
+                        YOLOv8 的精度已经足够。但 v11 多了一个关键能力：<span class="hl">断点续训</span>。在模型训练中，这意味着可以随时中断、随时续上，不用每次从头跑——这个能力在实际开发中能把迭代周期缩短好几倍。
+                        <div class="divider"></div>
+                        那为什么选 <span class="hl">v11s</span> 而不是 v11x？因为边缘算力有限。x 版本精度更高，但模型太大，放不到设备上。s 版本是轻量化版本，精度够用，功耗和体积都控制在设备能承受的范围内。
+                        <br />
+                        <span style="color:rgba(255,255,255,0.1);font-size:13px;">→ 选 s，不是因为它最好，是因为它在设备上能跑得起来。</span>
+                    </div>
+                </div>
+
+                <!-- ===== 决策5 ===== -->
+                <div class="timeline-item">
+                    <div class="step">决策 05 · 命名与外观</div>
+                    <div class="question"><span class="tag-icon">🏷️</span>为什么叫「A神」？为什么有「钢铁侠的眼睛」？</div>
+                    <div class="answer">
+                        运动员本质是慕强的。他们有胜负欲，需要被激发出「想赢」的冲动。
+                        <div class="divider"></div>
+                        所以我希望这个机器人看起来不是一台冷冰冰的机器，而是一个对手——酷炫、神秘、有压迫感。名字叫「A神」，有一种「你很厉害，但我想打败你」的心理暗示。眼睛的设计参考了钢铁侠——不是为了帅，而是为了在枯燥的训练中，给运动员一个视线寄托。
+                        <br />
+                        <span style="color:rgba(255,255,255,0.1);font-size:13px;">→ 像是在说：“看着我，再来一球。”</span>
+                    </div>
+                </div>
+
+                <!-- ===== 决策6 ===== -->
+                <div class="timeline-item">
+                    <div class="step">决策 06 · 护眼设计</div>
+                    <div class="question"><span class="tag-icon">👁️</span>光效很酷，但会不会伤到运动员的眼睛？</div>
+                    <div class="answer">
+                        眼睛发光的设定不只是为了酷——训练场上的光线环境很复杂，如果灯光有频闪，长期训练会加速视觉疲劳。
+                        <div class="divider"></div>
+                        所以特意要求：<span class="hl">无频闪、低蓝光、低照度</span>。既要让运动员在训练中有「被看着」的感觉，又不能真的伤到他们的眼睛。
+                        <br />
+                        <span style="color:rgba(255,255,255,0.1);font-size:13px;">→ 这不是一个功能，是一个底线。</span>
+                    </div>
+                </div>
+
+                <!-- ===== 决策7 ===== -->
+                <div class="timeline-item">
+                    <div class="step">决策 07 · 数据保密</div>
+                    <div class="question"><span class="tag-icon">🔒</span>运动员的训练数据，怎么保护？</div>
+                    <div class="answer">
+                        运动员的训练数据是严格保密的——战术习惯、技术弱点、身体反应，这些都是不能外泄的核心资产。
+                        <div class="divider"></div>
+                        所以在产品设计阶段，就把 <span class="hl">数据加密、本地存储、不联网上传</span> 这些机制放在最底层。
+                        <br />
+                        <span style="color:rgba(255,255,255,0.1);font-size:13px;">→ 不是做一个功能，是做一个底线。</span>
+                    </div>
+                </div>
+
+                <!-- ===== 决策8 ===== -->
+                <div class="timeline-item">
+                    <div class="step">决策 08 · 产品深度</div>
+                    <div class="question"><span class="tag-icon">💡</span>如果陪练水平不如运动员，怎么帮到顶尖选手？</div>
+                    <div class="answer">
+                        这是一个非常关键的问题。如果一个陪练在各方面技术都不如马龙，那马龙凭什么能在他身上实现技术突破？
+                        <div class="divider"></div>
+                        答案是：<span class="hl">“神之一手”</span>——就像 AlphaGo 对柯洁下出的那一步超越人类认知的棋。A 神不需要在每一个球上赢过运动员，它只需要在 <span class="hl">某一个瞬间</span>，打出一个运动员从未见过的、超越常规认知的球路。
+                        <div class="divider"></div>
+                        那一刻，运动员会产生一种「原来球还可以这么打」的顿悟。这种 <span class="hl">解题思维</span>——见识到新的、更好的技术可能性——才是对顶尖选手的真正价值。
+                        <div class="insight">
+                            “就像 AlphaGo 下出了人类棋谱里从未出现过的棋路。A 神要做的，是在球台上打出那一球。”
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ===== 决策9 ===== -->
+                <div class="timeline-item">
+                    <div class="step">决策 09 · 产品灵魂</div>
+                    <div class="question"><span class="tag-icon">⏳</span>除了训练本身，什么才是运动员的终极梦想？</div>
+                    <div class="answer">
+                        我一直在想，除了“提高训练效率”，这个产品还能给运动员带来什么更深处的东西。
+                        <div class="divider"></div>
+                        后来我想到了一个点：<span class="hl">跨越时空的对决</span>。
+                        <div class="divider"></div>
+                        孙颖莎和陈雨菲，从来没有在赛场上遇到过巅峰时期的张怡宁。她们的职业生涯没有交集。但如果 A 神能模拟出 <span class="hl">巅峰张怡宁的技战术风格</span> 呢？
+                        <div class="divider"></div>
+                        还有王皓和樊振东。樊振东的偶像就是王皓，但等他真正成为世界顶尖的时候，王皓已经退役了。他们之间差了整整一个时代——但如果 A 神能让樊振东和巅峰时期的王皓打一局呢？
+                        <div class="divider"></div>
+                        对运动员来说，这可能是比“提高训练效率”更打动人心的东西。<span class="hl">“和你巅峰时期的偶像打一场”</span>——这是一个运动员的终极梦想。这个点，能成为 A 神最强的宣传语。
+                        <div class="insight">
+                            “如果 A 神能让你和 2008 年的张怡宁打一局，你会不会想试一次？”
+                        </div>
+
+                        <div class="story-block">
+                            <div style="font-size:11px; color:rgba(240,192,96,0.15); letter-spacing:1px; margin-bottom:6px;">🏸 真实场景</div>
+                            <div class="pair">
+                                <strong>林丹 vs 安赛龙</strong><br />
+                                安赛龙少年时代的偶像就是林丹，他专门学习林丹的打法。等他成长为世界第一的时候，林丹已经步入职业生涯末期，不再是巅峰状态。两人确实有交手，但安赛龙没有机会对战巅峰林丹。<br />
+                                <span style="color:rgba(255,255,255,0.08);font-size:12px;">→ 机器人复刻巅峰林丹的突击、控网、多拍拉扯，安赛龙可以在训练里，和少年时崇拜的那个巅峰林丹对抗。</span>
+                            </div>
+                            <div style="margin-top:6px; font-size:11px; color:rgba(240,192,96,0.08);">
+                                ⭐ 这个故事感最强，面试讲出来感染力最好。
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- ===== 01 定位 ===== -->
+    <!-- ============================================================ -->
+    <section id="position" class="gap-section">
+        <div class="section-label">01 / 定位</div>
+        <div class="section-title">不是教练，是 <span class="highlight">“永不枯竭的陪练”</span></div>
+        <div class="section-desc">
+            不是告诉你“你要提升到什么程度”，而是在你练的过程里，帮你实现那个技术上的提升。
+            <br />
+            教练负责“怎么练”，A 神负责提供高质量的、不断进化的对抗。
+        </div>
+        <div style="margin-top:12px; display:flex; gap:6px; flex-wrap:wrap;">
+            <span class="pill">实时球路生成</span>
+            <span class="pill">自博弈探索</span>
+            <span class="pill">物理打出</span>
+            <span class="pill">长记忆</span>
+            <span class="pill">神之一手</span>
+            <span class="pill">时空对决</span>
+            <span class="pill-light">军工级保密</span>
+        </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- ===== 02 能力 ===== -->
+    <!-- ============================================================ -->
+    <section id="capability" class="gap-section">
+        <div class="section-label">02 / 它能做什么</div>
+        <div class="section-title">让选手始终面对 <span class="highlight">“没见过的新东西”</span></div>
+
+        <div class="card-grid">
+            <div class="card">
+                <span class="icon">🧬</span>
+                <h4>自己琢磨新球路</h4>
+                <p>AI 在虚拟世界里自己跟自己打，不断试出新的旋转、落点、节奏组合，然后把最意想不到的那些，在真实球台上打给选手接。</p>
+                <span class="tag-sm">不依赖人类教练的经验</span>
+            </div>
+            <div class="card">
+                <span class="icon">🔄</span>
+                <h4>边打边调整</h4>
+                <p>摄像头看着选手的站位和动作，AI 实时调整下一球的参数——你反手失误了，它就让你再练一次反手。不是随机，是专门针对你。</p>
+                <span class="tag-sm">像一个真正懂你的陪练</span>
+            </div>
+            <div class="card">
+                <span class="icon">📡</span>
+                <h4>记住你的一切</h4>
+                <p>每次训练都是一次考试。系统会记下你对不同球路的应对能力，慢慢画出你的个人技术画像——强项、弱项、盲区，一目了然。</p>
+                <span class="tag-sm">越用越懂你</span>
             </div>
         </div>
 
-        <!-- ===== Hero ===== -->
-        <section class="hero">
-            <div class="hero-text">
-                <div class="tag">✦ 智能陪练 · B端 · 具身智能</div>
-                <h1>
-                    探索人类尚未抵达的<br />
-                    <span class="gold">战术边界。</span>
-                </h1>
-                <div class="sub">隔网球类 · 智能陪练系统 · 省队/青训/国家队</div>
-                <div class="desc">
-                    通过虚拟自博弈探索新打法，并通过物理设备<span style="color: rgba(255,255,255,0.4);">实际打出来</span>。<br />
-                    不是模仿名手，而是创造“从未出现过的球路”。
-                </div>
-                <div class="meta">
-                    <span><strong>定位</strong> 智能陪练</span>
-                    <span><strong>形态</strong> 软件 + 硬件</span>
-                    <span><strong>核心</strong> 自博弈 · 长记忆 · 实时球路生成</span>
-                    <span><strong>目标</strong> 探索未知战术边界</span>
-                </div>
-            </div>
-            <div class="hero-visual">
-                <img src="assets/logo.png" alt="A神Logo" />
-            </div>
-        </section>
-
-        <!-- ===== 00 品牌哲学 ===== -->
-        <section id="philosophy" class="gap-section">
-            <div class="section-label">00 / 品牌哲学</div>
-            <h2 class="section-title">为什么叫 <span class="highlight">A神</span></h2>
-            <p class="section-desc" style="max-width:100%;">
-                A = Alpha · 顶级 · 第一。神 = 超越人类认知的存在。
-                A神，即是“探索战术未知领域的神级存在”——这正是AETHER的产品使命。
+        <div style="margin-top:12px; padding:10px 16px; background:rgba(255,255,255,0.015); border-radius:8px; border:1px solid rgba(255,255,255,0.03);">
+            <p style="font-size:12px; color:rgba(255,255,255,0.12);">
+                <span style="color:rgba(240,192,96,0.2);">一句话</span> 一台设备可以存无数个人的档案，换人不换设备，数据跟人走。
             </p>
+        </div>
+    </section>
 
-            <div class="philosophy-grid">
-                <div class="philosophy-card">
-                    <span class="icon">🌌</span>
-                    <div class="tradition">苍穹</div>
-                    <div class="meaning">“第五元素 · 纯净之‘气’”</div>
-                    <div class="relation">AETHER是古希腊哲学中构成宇宙的第五元素，是高于地面的纯净之“气”。<br />AI在虚拟空间中探索未知战术，如同在苍穹中翱翔，<span style="color:rgba(255,255,255,0.15);">不受地面束缚。</span></div>
-                </div>
-                <div class="philosophy-card" style="border-color:rgba(240,192,96,0.1);">
-                    <span class="icon">🌐</span>
-                    <div class="tradition">以太</div>
-                    <div class="meaning">“光传播的介质 · 无处不在”</div>
-                    <div class="relation">19世纪物理学中假设的“光传播介质”，充满整个宇宙。<br />AI生成的球路如同光波，通过AETHER这个介质，<span style="color:rgba(255,255,255,0.15);">从虚拟世界传播到真实球台。</span></div>
-                </div>
-                <div class="philosophy-card">
-                    <span class="icon">🌀</span>
-                    <div class="tradition">虚无</div>
-                    <div class="meaning">“无限可能性的源头”</div>
-                    <div class="relation">每一次发球、每一个落点都是全新的。<br />AETHER的虚无里，<span style="color:rgba(255,255,255,0.15);">能生出无穷变化。</span></div>
-                </div>
+    <!-- ============================================================ -->
+    <!-- ===== 03 受众 ===== -->
+    <!-- ============================================================ -->
+    <section id="audience" class="gap-section">
+        <div class="section-label">03 / 给谁用</div>
+        <div class="section-title">三层金字塔 <span class="highlight">谁先谁后</span></div>
+
+        <div class="card-grid" style="grid-template-columns:1fr 1fr 1fr;">
+            <div class="card" style="border-top:2px solid rgba(240,192,96,0.15);">
+                <div style="font-size:10px; color:#f0c060; letter-spacing:1px; opacity:0.25; text-transform:uppercase;">第一优先级</div>
+                <h4 style="margin-top:2px;">国家队</h4>
+                <p>人最少，但说话最好使。签下一两支队伍，就是最硬的产品背书。</p>
+                <div style="font-size:11px; color:rgba(240,192,96,0.12); margin-top:4px;">品牌灯塔</div>
             </div>
-        </section>
+            <div class="card" style="border-top:2px solid rgba(240,192,96,0.08);">
+                <div style="font-size:10px; color:#f0c060; letter-spacing:1px; opacity:0.25; text-transform:uppercase;">第二优先级</div>
+                <h4 style="margin-top:2px;">省队 · 青训 · 体校</h4>
+                <p>数量适中，需求真实。教练资源不够用，“高质量陪练”是他们最疼的点。</p>
+                <div style="font-size:11px; color:rgba(240,192,96,0.12); margin-top:4px;">营收基本盘</div>
+            </div>
+            <div class="card" style="border-top:2px solid rgba(240,192,96,0.04);">
+                <div style="font-size:10px; color:#f0c060; letter-spacing:1px; opacity:0.25; text-transform:uppercase;">第三优先级</div>
+                <h4 style="margin-top:2px;">俱乐部 · 个人</h4>
+                <p>人最多，但付费能力中低。以后可以做轻量版、个人版，走规模化。</p>
+                <div style="font-size:11px; color:rgba(240,192,96,0.12); margin-top:4px;">规模化扩展</div>
+            </div>
+        </div>
 
-        <!-- ===== 01 核心定位 ===== -->
-        <section id="position" class="gap-section">
-            <div class="section-label">01 / 核心定位</div>
-            <h2 class="section-title">不是教练，是 <span class="highlight">“永不枯竭的陪练”</span></h2>
-            <p class="section-desc">
-                A神不是一个提供建议的教练，而是一个<span style="color: rgba(255,255,255,0.4);">能实际打出球</span>的陪练。
-                教练负责“怎么练”，A神负责“提供高质量的、不断进化的对抗”。
+        <div style="margin-top:12px; padding:10px 16px; background:rgba(255,255,255,0.015); border-radius:8px; border:1px solid rgba(255,255,255,0.03);">
+            <p style="font-size:12px; color:rgba(255,255,255,0.12);">
+                <span style="color:rgba(240,192,96,0.2);">路径</span> 省队验证 → 国家队背书 → 俱乐部铺量
             </p>
-            <div style="margin-top:16px; display:flex; gap:8px; flex-wrap:wrap;">
-                <span class="pill">🎯 实时球路生成</span>
-                <span class="pill">🧠 自博弈探索</span>
-                <span class="pill">🏓 物理打出</span>
-                <span class="pill">🔄 持续进化</span>
-                <span class="pill">🧬 长记忆</span>
-                <span class="pill">🔒 军工级保密</span>
+        </div>
+
+        <div style="margin-top:12px; padding:10px 16px; background:rgba(240,192,96,0.02); border-radius:8px; border:1px solid rgba(240,192,96,0.04);">
+            <p style="font-size:12px; color:rgba(255,255,255,0.15);">
+                <span style="color:rgba(240,192,96,0.2);">🔗 粘性</span> 运动员的数据越多，品牌粘性越好。一个省队用了 3 年，积累了数千小时的训练数据——他们不会轻易换掉这个系统。这是产品的核心护城河。
+            </p>
+        </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- ===== 04 技术 ===== -->
+    <!-- ============================================================ -->
+    <section id="tech" class="gap-section">
+        <div class="section-label">04 / 技术怎么实现的</div>
+        <div class="section-title">从算法到球路的 <span class="highlight">技术栈</span></div>
+
+        <div class="card-grid" style="grid-template-columns:1fr 1fr;">
+            <div class="card">
+                <div style="font-size:10px; color:#f0c060; letter-spacing:1px; opacity:0.2; text-transform:uppercase;">球路怎么来的</div>
+                <h4 style="margin-top:2px;">自己跟自己打</h4>
+                <p>用分层强化学习，AI 在 MuJoCo 物理仿真环境里自己跟自己打，不断试出新的球路。</p>
+                <div style="font-size:11px; color:rgba(240,192,96,0.12); margin-top:4px;">球路延迟 ≤ 200ms · 每天新球路 ≥ 100种</div>
             </div>
-        </section>
-
-        <!-- ===== 02 核心能力 ===== -->
-        <section id="capability" class="gap-section">
-            <div class="section-label">02 / 核心能力</div>
-            <h2 class="section-title">四个引擎，<span class="highlight">一个目标</span></h2>
-            <p class="section-desc">让选手始终面对“从未见过的球路”。</p>
-
-            <div class="grid-3" style="margin-top:24px;">
-                <div class="card">
-                    <span class="icon">🧬</span>
-                    <h4>战术生成引擎</h4>
-                    <p>AI在虚拟空间中通过自博弈不断生成新的球路组合——旋转、落点、节奏——然后通过硬件<span style="color: rgba(255,255,255,0.3);">实际打给选手接</span>。</p>
-                </div>
-                <div class="card">
-                    <span class="icon">🔄</span>
-                    <h4>实时适应</h4>
-                    <p>摄像头捕捉选手的站位、击球动作和回球质量，AI实时调整下一球的参数——让陪练<span style="color: rgba(255,255,255,0.3);">始终和选手的水平相匹配</span>。</p>
-                </div>
-                <div class="card">
-                    <span class="icon">📡</span>
-                    <h4>对抗数据沉淀</h4>
-                    <p>每次训练都是一次“考试”。系统记录选手对不同球路的应对能力，生成个人技术画像——<span style="color: rgba(255,255,255,0.3);">强项、弱项、盲区一目了然</span>。</p>
-                </div>
+            <div class="card">
+                <div style="font-size:10px; color:#f0c060; letter-spacing:1px; opacity:0.2; text-transform:uppercase;">怎么打出来</div>
+                <h4 style="margin-top:2px;">端到端控制</h4>
+                <p>AI 生成的战术参数直接映射为电机控制信号，算法和硬件各改各的，互不干扰。</p>
+                <div style="font-size:11px; color:rgba(240,192,96,0.12); margin-top:4px;">落点精度 ±10cm · 旋转组合 ≥ 60种</div>
             </div>
-            <div style="margin-top:16px; padding:14px 20px; background:rgba(240,192,96,0.03); border-radius:10px; border:1px solid rgba(240,192,96,0.06); text-align:center;">
-                <p style="font-size:13px; color:rgba(255,255,255,0.2);">
-                    <span style="color:#f0c060;">⚡ 关键能力：</span> 长记忆 · 一人一档案 · 云端同步 · 多人共用设备
-                </p>
+            <div class="card">
+                <div style="font-size:10px; color:#f0c060; letter-spacing:1px; opacity:0.2; text-transform:uppercase;">怎么看动作</div>
+                <h4 style="margin-top:2px;">YOLOv11s</h4>
+                <p>改进版的 YOLO 能做到毫米级动作捕捉，配合 DeepSORT 多目标追踪，看清楚每一个动作细节。</p>
+                <div style="font-size:11px; color:rgba(240,192,96,0.12); margin-top:4px;">检测帧率 ≥ 30FPS · 姿态精度 ≤ 2cm</div>
             </div>
-        </section>
-
-        <!-- ===== 03 三层受众 ===== -->
-        <section id="audience" class="gap-section">
-            <div class="section-label">03 / 受众人群</div>
-            <h2 class="section-title">三层金字塔 <span class="highlight">精准分层</span></h2>
-            <p class="section-desc">国家队是品牌灯塔，省队/青训是营收基本盘，高水平俱乐部是规模化扩展方向。</p>
-
-            <div class="audience-pyramid">
-                <div class="pyramid-item top">
-                    <div class="level">🎯 第一优先级 · 品牌灯塔</div>
-                    <div class="group">国家队</div>
-                    <div class="desc">数量极少，但话语权最强。<br />签下1-2支队伍即是最硬的产品背书。</div>
-                    <div class="priority">商业价值：品牌背书 &gt; 直接营收</div>
-                </div>
-                <div class="pyramid-item mid">
-                    <div class="level">📈 第二优先级 · 营收基本盘</div>
-                    <div class="group">省队 · 青训基地 · 体校</div>
-                    <div class="desc">数量适中，需求真实，付费能力中等。<br />教练资源不足，“高质量陪练”是最真实痛点。</div>
-                    <div class="priority">商业价值：主力营收来源</div>
-                </div>
-                <div class="pyramid-item base">
-                    <div class="level">🚀 第三优先级 · 规模化扩展</div>
-                    <div class="group">高水平俱乐部 · 个人选手</div>
-                    <div class="desc">数量最大，付费能力中低。<br />可作为轻量化版本的未来扩展方向。</div>
-                    <div class="priority">商业价值：规模化潜力最大</div>
-                </div>
+            <div class="card">
+                <div style="font-size:10px; color:#f0c060; letter-spacing:1px; opacity:0.2; text-transform:uppercase;">怎么记住你</div>
+                <h4 style="margin-top:2px;">短期记忆 + 长期记忆</h4>
+                <p>短期记住你刚才的对抗状态，长期沉淀你的历史画像。用向量检索，找起来很快。</p>
+                <div style="font-size:11px; color:rgba(240,192,96,0.12); margin-top:4px;">检索 ≤ 100ms · 画像更新 ≤ 5min</div>
             </div>
-            <div style="margin-top:16px; padding:14px 20px; background:rgba(240,192,96,0.03); border-radius:10px; border:1px solid rgba(240,192,96,0.06); text-align:center;">
-                <p style="font-size:13px; color:rgba(255,255,255,0.2);">
-                    <span style="color:#f0c060;">💡 商业化路径：</span> 省队/青训验证 → 国家队背书 → 俱乐部规模化
-                </p>
+        </div>
+
+        <div style="margin-top:12px; padding:10px 16px; background:rgba(255,255,255,0.015); border-radius:8px; border:1px solid rgba(255,255,255,0.03);">
+            <p style="font-size:11px; color:rgba(255,255,255,0.08);">
+                核心芯片 · NVIDIA Jetson Orin NX · 全部本地运算，不联网
+            </p>
+        </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- ===== 05 硬件 ===== -->
+    <!-- ============================================================ -->
+    <section id="hardware" class="gap-section">
+        <div class="section-label">05 / 硬件长什么样</div>
+        <div class="section-title">AI 的“身体” <span class="highlight">长什么样</span></div>
+
+        <div class="spec-grid">
+            <div class="spec-item"><div class="value">~1.4m</div><div class="label">高度</div></div>
+            <div class="spec-item"><div class="value">~18kg</div><div class="label">重量</div></div>
+            <div class="spec-item"><div class="value">≤ 200ms</div><div class="label">反应速度</div></div>
+            <div class="spec-item"><div class="value">60+</div><div class="label">可调旋转</div></div>
+        </div>
+
+        <div class="hardware-note">
+            <div class="sub">设计</div>
+            <p>
+                哑光暗影黑金属外壳，不反光，像一个“沉默的影子”。轮廓以棱角切面为主，看着就很快。
+                <br />
+                <strong>“鹰眼”</strong> 顶部双摄像头呈 V 字形排列。训练时冰蓝色光环以 <strong>无频闪、低蓝光、低照度</strong> 的方式亮起——不伤眼。
+            </p>
+        </div>
+
+        <div class="eye-grid">
+            <div class="eye-item"><div class="state">待机</div><div class="desc">无光 · 完全隐藏</div></div>
+            <div class="eye-item"><div class="state">训练中</div><div class="desc">冰蓝 · 柔和 · 护眼</div></div>
+            <div class="eye-item"><div class="state">新球路生成</div><div class="desc">呼吸脉冲 · 不闪烁</div></div>
+        </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- ===== 06 记忆 ===== -->
+    <!-- ============================================================ -->
+    <section id="memory" class="gap-section">
+        <div class="section-label">06 / 记忆系统</div>
+        <div class="section-title">一人一档案 · <span class="highlight">多人共用一台</span></div>
+
+        <div class="memory-grid">
+            <div class="memory-card">
+                <span class="icon">👤</span>
+                <h4>一人一档案</h4>
+                <p>每个选手独立的技战术画像，数据不串</p>
             </div>
-        </section>
-
-        <!-- ===== 04 技术实现细节 ===== -->
-        <section id="tech" class="gap-section">
-            <div class="section-label">04 / 技术实现细节</div>
-            <h2 class="section-title">从算法到球路的 <span class="highlight">完整技术栈</span></h2>
-
-            <div class="tech-detail">
-                <div class="tech-item">
-                    <div class="tech-label">球路生成引擎</div>
-                    <div class="tech-name">分层强化学习 + MuJoCo仿真</div>
-                    <div class="tech-desc">Hierarchical DRL将目标拆解为微观动作，MuJoCo物理仿真实现“虚拟打球”，逆强化学习实时推断对手策略意图。</div>
-                    <div class="tech-metric">⚡ 球路延迟 ≤ 200ms · 新球路 ≥ 100种/日</div>
-                </div>
-                <div class="tech-item">
-                    <div class="tech-label">物理执行控制</div>
-                    <div class="tech-name">端到端学习 + 模仿学习</div>
-                    <div class="tech-desc">E2E框架将AI生成的战术参数直接映射为电机控制信号，模块化架构实现算法与硬件的解耦迭代。</div>
-                    <div class="tech-metric">🎯 落点精度 ±10cm · 旋转组合 ≥ 60种</div>
-                </div>
-                <div class="tech-item">
-                    <div class="tech-label">感知系统</div>
-                    <div class="tech-name">YOLOv11s + DeepSORT + OpenPose</div>
-                    <div class="tech-desc">改进型YOLO实现毫米级动作捕捉，DeepSORT多目标追踪，OpenPose提取2D/3D骨骼关键点。</div>
-                    <div class="tech-metric">📷 检测帧率 ≥ 30FPS · 姿态精度 ≤ 2cm</div>
-                </div>
-                <div class="tech-item">
-                    <div class="tech-label">长记忆系统</div>
-                    <div class="tech-name">STM+LTM双轨 + 向量检索</div>
-                    <div class="tech-desc">短期记忆(STM)存储当前对抗状态，长期记忆(LTM)沉淀历史画像，向量数据库(Pinecone)实现语义检索。</div>
-                    <div class="tech-metric">🧠 检索延迟 ≤ 100ms · 画像更新 ≤ 5min</div>
-                </div>
+            <div class="memory-card" style="border-color:rgba(240,192,96,0.06);">
+                <span class="icon">🔄</span>
+                <h4>多人共用</h4>
+                <p>一台设备可服务 20-50 人，换人切账号就行</p>
             </div>
-            <div style="margin-top:16px; padding:14px 20px; background:rgba(240,192,96,0.03); border-radius:10px; border:1px solid rgba(240,192,96,0.06); text-align:center;">
-                <p style="font-size:12px; color:rgba(255,255,255,0.15);">
-                    端侧推理（NVIDIA Jetson Orin NX）· 5G低延迟传输 · 零信任安全架构
-                </p>
+            <div class="memory-card">
+                <span class="icon">☁️</span>
+                <h4>云端同步</h4>
+                <p>数据跟人走，换设备不丢数据</p>
             </div>
-        </section>
+        </div>
 
-        <!-- ===== 05 硬件形态 ===== -->
-        <section id="hardware" class="gap-section">
-            <div class="section-label">05 / 硬件形态</div>
-            <h2 class="section-title">AI的“身体” <span class="highlight">长什么样</span></h2>
-            <p class="section-desc">A神是一台能实时打出AI生成球路的智能发球终端，是AI的物理执行端。</p>
+        <div style="margin-top:12px; padding:10px 16px; background:rgba(240,192,96,0.02); border-radius:8px; border:1px solid rgba(240,192,96,0.04);">
+            <p style="font-size:12px; color:rgba(255,255,255,0.15);">
+                <span style="color:rgba(240,192,96,0.2);">🔗 数据即壁垒</span> 一个选手用得越久，AI 越懂他。3 年数据 = 3000+ 小时训练记录，换设备的成本太高了。数据越多，粘性越强。
+            </p>
+        </div>
+    </section>
 
-            <div class="hardware-spec">
-                <div class="spec-item">
-                    <div class="value">~1.4m</div>
-                    <div class="label">整机高度</div>
-                </div>
-                <div class="spec-item">
-                    <div class="value">~18kg</div>
-                    <div class="label">整机重量</div>
-                </div>
-                <div class="spec-item">
-                    <div class="value">≤ 200ms</div>
-                    <div class="label">响应时延</div>
-                </div>
-                <div class="spec-item">
-                    <div class="value">60+</div>
-                    <div class="label">可调旋转组合</div>
-                </div>
+    <!-- ============================================================ -->
+    <!-- ===== 07 保密 ===== -->
+    <!-- ============================================================ -->
+    <section id="security" class="gap-section">
+        <div class="section-label">07 / 保密</div>
+        <div class="section-title">四位一体 · <span class="highlight">数据安全</span></div>
+
+        <div class="security-grid">
+            <div class="security-card"><span class="icon">⚖️</span><h4>法律</h4><p>数据归客户 · 保密协议</p></div>
+            <div class="security-card"><span class="icon">🔐</span><h4>技术</h4><p>TLS 1.3 · AES-256 · 三不原则</p></div>
+            <div class="security-card"><span class="icon">🧑‍💻</span><h4>运营</h4><p>数据隔离 · 多级权限</p></div>
+            <div class="security-card"><span class="icon">🛡️</span><h4>物理</h4><p>防拆传感器 · 一键擦除</p></div>
+        </div>
+
+        <div style="margin-top:12px; padding:10px 16px; background:rgba(255,255,255,0.015); border-radius:8px; border:1px solid rgba(255,255,255,0.03);">
+            <p style="font-size:12px; color:rgba(255,255,255,0.12);">
+                <span style="color:rgba(240,192,96,0.2);">底线</span> 每一份数据都经过军工级加密。这是进入国家队和省队市场的“入场券”。
+            </p>
+        </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- ===== 08 定价 ===== -->
+    <!-- ============================================================ -->
+    <section id="pricing" class="gap-section">
+        <div class="section-label">08 / 定价</div>
+        <div class="section-title">硬件 + 账号 <span class="highlight">双轮驱动</span></div>
+
+        <div class="pricing-grid">
+            <div class="pricing-card"><div class="version">标准版</div><div class="price">¥39,800</div><div class="sub">+ ¥9,800 / 人 / 年</div><div class="desc">省队 · ≤ 20 账号</div></div>
+            <div class="pricing-card" style="border-color:rgba(240,192,96,0.06);"><div class="version">专业版</div><div class="price">¥68,000</div><div class="sub">+ ¥7,800 / 人 / 年</div><div class="desc">国家队 · ≤ 50 账号</div></div>
+            <div class="pricing-card"><div class="version">旗舰版</div><div class="price">¥128,000</div><div class="sub">+ ¥5,800 / 人 / 年</div><div class="desc">多品类 · 不限账号</div></div>
+        </div>
+
+        <div style="margin-top:12px; padding:10px 16px; background:rgba(255,255,255,0.015); border-radius:8px; border:1px solid rgba(255,255,255,0.03);">
+            <p style="font-size:11px; color:rgba(255,255,255,0.08);">
+                省队 1 台标准版 + 20 账号 → 首年 ≈ ¥235,800 · 次年续费毛利率 ≥ 60%
+            </p>
+        </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- ===== 09 迭代 ===== -->
+    <!-- ============================================================ -->
+    <section id="iteration" class="gap-section">
+        <div class="section-label">09 / 迭代与生命周期</div>
+        <div class="section-title">数据驱动的 <span class="highlight">三环迭代</span></div>
+
+        <div class="card-grid" style="grid-template-columns:1fr 1fr 1fr;">
+            <div class="card" style="border-color:rgba(240,192,96,0.04);">
+                <div style="font-size:10px; color:#f0c060; letter-spacing:1px; opacity:0.2; text-transform:uppercase;">每周</div>
+                <h4>A/B 测试</h4>
+                <p>新球路策略 vs 当前策略，看哪个让选手适应得更快。</p>
             </div>
-
-            <div class="hardware-desc">
-                <div class="title">⚫ 设计语言：神秘 · 酷冷 · 轻量 · 护眼</div>
-                <p>
-                    A神机身采用<strong style="color:rgba(255,255,255,0.4);">哑光暗影黑</strong>金属外壳，表面做低反射处理，在训练场灯光下不反光，像一个“沉默的影子”。
-                    机身轮廓以<strong style="color:rgba(255,255,255,0.4);">棱角切面</strong>为主，传递精准、快速、不拖泥带水的竞技感。
-                </p>
-                <p style="margin-top:8px;">
-                    <strong style="color:rgba(255,255,255,0.3);">“鹰眼”视觉系统：</strong>
-                    顶部双摄像头呈V字形排列，模拟猛禽双眼的凝视感。关机时镜片与机身融为一体；训练时冰蓝色光环以<strong style="color:rgba(255,255,255,0.3);">无频闪、低蓝光、低照度</strong>的方式稳定亮起，柔和注视选手，不干扰视线，完全符合乒乓球赛事对光线的严格标准。
-                    生成新球路时，光环以<strong style="color:rgba(255,255,255,0.3);">缓慢呼吸</strong>而非闪烁的方式变化一次，表示“发现新战术”。全机无实体屏幕，仅保留一处NFC感应区。
-                </p>
+            <div class="card" style="border-color:rgba(240,192,96,0.04);">
+                <div style="font-size:10px; color:#f0c060; letter-spacing:1px; opacity:0.2; text-transform:uppercase;">每天</div>
+                <h4>用户反馈</h4>
+                <p>选手说“这个球有意思”和“这个球没感觉”——系统自动记录，调优权重。</p>
             </div>
-
-            <div class="eye-spec">
-                <div class="eye-item">
-                    <div class="state">待机</div>
-                    <div class="desc">无光 · 完全隐藏</div>
-                </div>
-                <div class="eye-item">
-                    <div class="state">训练中</div>
-                    <div class="desc">冰蓝 · 柔和注视 · 护眼</div>
-                </div>
-                <div class="eye-item">
-                    <div class="state">生成新球路</div>
-                    <div class="desc">呼吸脉冲 · 非闪烁</div>
-                </div>
+            <div class="card" style="border-color:rgba(240,192,96,0.04);">
+                <div style="font-size:10px; color:#f0c060; letter-spacing:1px; opacity:0.2; text-transform:uppercase;">每月</div>
+                <h4>模型更新</h4>
+                <p>全量历史数据 + 新标注数据，发布新版本模型。版本号 V主.功.补。</p>
             </div>
+        </div>
 
-            <div style="margin-top:16px; display:grid; grid-template-columns:1fr 1fr 1fr; gap:12px;">
-                <div style="background:rgba(255,255,255,0.015); border-radius:10px; padding:12px 16px; border:1px solid rgba(255,255,255,0.04); text-align:center;">
-                    <div style="font-size:11px; color:rgba(255,255,255,0.15);">材质</div>
-                    <div style="font-size:14px; color:rgba(255,255,255,0.4);">铝合金 + 碳纤维</div>
-                </div>
-                <div style="background:rgba(255,255,255,0.015); border-radius:10px; padding:12px 16px; border:1px solid rgba(255,255,255,0.04); text-align:center;">
-                    <div style="font-size:11px; color:rgba(255,255,255,0.15);">核心部件</div>
-                    <div style="font-size:14px; color:rgba(255,255,255,0.4);">NVIDIA Jetson Orin NX</div>
-                </div>
-                <div style="background:rgba(255,255,255,0.015); border-radius:10px; padding:12px 16px; border:1px solid rgba(255,255,255,0.04); text-align:center;">
-                    <div style="font-size:11px; color:rgba(255,255,255,0.15);">模块化</div>
-                    <div style="font-size:14px; color:rgba(255,255,255,0.4);">快拆发球头 · 多品类适配</div>
-                </div>
+        <div style="margin-top:16px; padding:14px 18px; background:rgba(255,255,255,0.015); border-radius:10px; border:1px solid rgba(255,255,255,0.03);">
+            <div style="font-size:10px; color:#f0c060; letter-spacing:1px; opacity:0.25; text-transform:uppercase; margin-bottom:6px;">产品生命周期</div>
+            <div class="iteration-flow">
+                <span class="step">概念验证</span>
+                <span class="arrow">→</span>
+                <span class="step">MVP 交付</span>
+                <span class="arrow">→</span>
+                <span class="step" style="border-color:rgba(240,192,96,0.04);color:rgba(240,192,96,0.15);">PMF 验证</span>
+                <span class="arrow">→</span>
+                <span class="step" style="border-color:rgba(240,192,96,0.04);color:rgba(240,192,96,0.15);">商业化</span>
+                <span class="arrow">→</span>
+                <span class="step" style="border-color:rgba(240,192,96,0.04);color:rgba(240,192,96,0.15);">生态平台</span>
             </div>
-        </section>
-
-        <!-- ===== 06 长记忆机制 ===== -->
-        <section id="memory" class="gap-section">
-            <div class="section-label">06 / 长记忆机制</div>
-            <h2 class="section-title">一人一档案 · <span class="highlight">多人共用设备</span></h2>
-            <p class="section-desc">一台设备存储无限个人档案，每个选手独立记忆、独立成长曲线。换人不换设备，数据云端隔离。</p>
-
-            <div class="memory-section">
-                <div class="memory-card">
-                    <span class="icon">👤</span>
-                    <h4>一人一档案</h4>
-                    <p>每位选手拥有独立的个人账户，系统从零学习其技战术特征、强项、弱项、成长曲线，数据永不混淆。</p>
-                </div>
-                <div class="memory-card" style="border-color:rgba(240,192,96,0.08);">
-                    <span class="icon">🔄</span>
-                    <h4>多人共用设备</h4>
-                    <p>一台设备可服务20-50名运动员，按账号切换数据。省队买一台设备，全队都能用。</p>
-                </div>
-                <div class="memory-card">
-                    <span class="icon">☁️</span>
-                    <h4>云端同步</h4>
-                    <p>数据跟账号走，不绑定设备。选手换设备、换场地，数据自动同步，永不丢失。</p>
-                </div>
+            <div style="font-size:11px; color:rgba(255,255,255,0.06); text-align:center; margin-top:6px;">
+                0-6月 · 6-12月 · 12-18月 · 18-24月 · 24-36月
             </div>
-            <div style="margin-top:16px; padding:14px 20px; background:rgba(240,192,96,0.03); border-radius:10px; border:1px solid rgba(240,192,96,0.06); text-align:center;">
-                <p style="font-size:13px; color:rgba(255,255,255,0.2);">
-                    <span style="color:#f0c060;">💡 核心壁垒：</span> 数据越丰富，迁移成本越高。省队用了3年，积累了数千小时的训练数据——他们不会轻易换掉这个系统。
-                </p>
+        </div>
+
+        <div class="badcase-block">
+            <div class="label">⚠️ Badcase 处理</div>
+            <p>
+                <strong>球路不自然</strong> 如果 AI 生成的球路被教练标记为“不自然”，会进入人工校验队列，3 个工作日内复核，修正训练数据。<br />
+                <strong>设备离线</strong> 如果设备断网，本地缓存最近 7 天数据，恢复后自动同步。<br />
+                <strong>误判动作</strong> 如果系统误判选手动作，支持教练手动修正，修正后的数据会作为正样本重新训练模型。
+            </p>
+        </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- ===== 10 原型 ===== -->
+    <!-- ============================================================ -->
+    <section id="prototype" class="gap-section">
+        <div class="section-label">10 / 原型设计</div>
+        <div class="section-title">Figma 高保真 <span class="highlight">原型</span></div>
+        <div style="font-size:14px; color:rgba(255,255,255,0.15); font-weight:300; margin-bottom:4px;">
+            7 个核心页面，覆盖教练端与运动员端完整路径
+        </div>
+
+        <div class="proto-grid">
+            <div class="proto-item">
+                <img src="images/proto-01-登录页.png" alt="登录页" />
             </div>
-        </section>
-
-        <!-- ===== 07 保密体系 ===== -->
-        <section id="security" class="gap-section">
-            <div class="section-label">07 / 保密体系</div>
-            <h2 class="section-title">四位一体 · <span class="highlight">军工级数据安全</span></h2>
-            <p class="section-desc">国家队/省队的训练数据属于机密。A神从法律、技术、运营、物理四个层面构建了完整的数据安全防护体系。</p>
-
-            <div class="security-grid">
-                <div class="security-card" style="border-color:rgba(240,192,96,0.08);">
-                    <span class="icon">⚖️</span>
-                    <h4>法律层面</h4>
-                    <p>数据100%所有权归客户<br />签署《保密协议》<br />遵循《数据安全法》《个人信息保护法》</p>
-                </div>
-                <div class="security-card">
-                    <span class="icon">🔐</span>
-                    <h4>技术层面</h4>
-                    <p>TLS 1.3 传输加密<br />AES-256 存储加密<br />“三不”原则：不进训练集·不做公开分享·不出客户环境</p>
-                </div>
-                <div class="security-card">
-                    <span class="icon">🧑‍💻</span>
-                    <h4>运营层面</h4>
-                    <p>内部数据隔离 · 多级权限<br />员工背景调查与保密承诺<br />定期安全审计与渗透测试</p>
-                </div>
-                <div class="security-card" style="border-color:rgba(240,192,96,0.08);">
-                    <span class="icon">🛡️</span>
-                    <h4>物理层面</h4>
-                    <p>防拆传感器 · 自动锁死<br />多因素认证登录<br />远程“一键擦除”功能</p>
-                </div>
+            <div class="proto-item">
+                <img src="images/proto-02-训练模式.png" alt="训练模式" />
             </div>
-            <div style="margin-top:16px; padding:14px 20px; background:rgba(240,192,96,0.03); border-radius:10px; border:1px solid rgba(240,192,96,0.06); text-align:center;">
-                <p style="font-size:13px; color:rgba(255,255,255,0.2);">
-                    <span style="color:#f0c060;">🔒 核心原则：</span> 每一帧视频的所属权都是客户的，每一份数据都经过军工级加密。这是我们进入国家队和省队市场的“入场券”。
-                </p>
+            <div class="proto-item">
+                <img src="images/proto-03-实时对抗.png" alt="实时对抗" />
             </div>
-        </section>
-
-        <!-- ===== 08 定价模型 ===== -->
-        <section id="pricing" class="gap-section">
-            <div class="section-label">08 / 定价模型</div>
-            <h2 class="section-title">硬件 + 账号 <span class="highlight">双轮驱动</span></h2>
-            <p class="section-desc">B端采购决策的核心是“ROI”——一台设备能覆盖多少人、带来多大价值。</p>
-
-            <div class="pricing-grid">
-                <div class="pricing-card">
-                    <div class="version">标准版</div>
-                    <div class="price-hardware">¥39,800</div>
-                    <div class="price-account">+ ¥9,800 / 人 / 年</div>
-                    <div class="desc">省队 · 青训基地<br />≤ 20 账号</div>
-                </div>
-                <div class="pricing-card" style="border-color:rgba(240,192,96,0.08);">
-                    <div class="version">专业版</div>
-                    <div class="price-hardware">¥68,000</div>
-                    <div class="price-account">+ ¥7,800 / 人 / 年</div>
-                    <div class="desc">国家队 · 大型训练中心<br />≤ 50 账号</div>
-                </div>
-                <div class="pricing-card">
-                    <div class="version">旗舰版</div>
-                    <div class="price-hardware">¥128,000</div>
-                    <div class="price-account">+ ¥5,800 / 人 / 年</div>
-                    <div class="desc">多品类覆盖 · 定制化开发<br />不限账号</div>
-                </div>
+            <div class="proto-item">
+                <img src="images/proto-04-训练报告.png" alt="训练报告" />
             </div>
-            <div style="margin-top:16px; padding:14px 20px; background:rgba(240,192,96,0.03); border-radius:10px; border:1px solid rgba(240,192,96,0.06); text-align:center;">
-                <p style="font-size:12px; color:rgba(255,255,255,0.15);">
-                    📊 省队采购1台标准版 + 20个账号 → 首年收入 ≈ ¥235,800 · 次年续费毛利率 ≥ 60%
-                </p>
+            <div class="proto-item">
+                <img src="images/proto-05-个人档案.png" alt="个人档案" />
             </div>
-        </section>
-
-        <!-- ===== 09 竞品分析 ===== -->
-        <section id="competitors" class="gap-section">
-            <div class="section-label">09 / 竞品分析</div>
-            <h2 class="section-title">A神的 <span class="highlight">差异化</span></h2>
-
-            <div class="table-wrap">
-                <table>
-                    <thead>
-                        <tr><th>竞品</th><th>核心能力</th><th>球路来源</th><th>长记忆</th><th>多人共用</th><th>保密体系</th><th>核心短板</th></tr>
-                    </thead>
-                    <tbody>
-                        <tr><td>庞伯特</td><td>发球机+AI语音纠错</td><td>预设程序</td><td>❌</td><td>❌</td><td>❌</td><td>只能重复预设球路</td></tr>
-                        <tr><td>Smartshot</td><td>场馆摄像头+数据报告</td><td>仅记录</td><td>❌</td><td>✅</td><td>❌</td><td>只记录，不打球</td></tr>
-                        <tr><td>银河通用</td><td>具身机器人</td><td>强化学习</td><td>❌</td><td>❌</td><td>❌</td><td>成本高，仅网球</td></tr>
-                        <tr><td style="color:#f0c060;font-weight:400;">A神</td><td style="color:#f0c060;">AI陪练+自博弈+长记忆</td><td style="color:#f0c060;">AI实时生成</td><td style="color:#f0c060;">✅</td><td style="color:#f0c060;">✅</td><td style="color:#f0c060;">✅</td><td style="color:#f0c060;">新进入者</td></tr>
-                    </tbody>
-                </table>
+            <div class="proto-item">
+                <img src="images/proto-06-战术库.png" alt="战术库" />
             </div>
-        </section>
-
-        <!-- ===== 10 产品生命周期 ===== -->
-        <section id="lifecycle" class="gap-section">
-            <div class="section-label">10 / 产品生命周期</div>
-            <h2 class="section-title">从概念验证到 <span class="highlight">生态平台</span></h2>
-
-            <div class="grid-5" style="margin-top:24px;">
-                <div class="card" style="text-align:center;border-top:2px solid rgba(240,192,96,0.2);">
-                    <div style="font-size:11px;color:#f0c060;letter-spacing:1px;">阶段 1</div>
-                    <h4 style="margin:4px 0;">概念验证</h4>
-                    <p style="font-size:12px;">单品类 · 内部测试<br />验证“AI能否生成可执行的球路”</p>
-                    <div class="phase-status">⏱ 0-6月</div>
-                </div>
-                <div class="card" style="text-align:center;border-top:2px solid rgba(240,192,96,0.2);">
-                    <div style="font-size:11px;color:#f0c060;letter-spacing:1px;">阶段 2</div>
-                    <h4 style="margin:4px 0;">MVP交付</h4>
-                    <p style="font-size:12px;">1-2支省队试点<br />首台设备部署 · 验证多账号共用</p>
-                    <div class="phase-status">⏱ 6-12月</div>
-                </div>
-                <div class="card" style="text-align:center;border-top:2px solid rgba(240,192,96,0.3);">
-                    <div style="font-size:11px;color:#f0c060;letter-spacing:1px;">阶段 3</div>
-                    <h4 style="margin:4px 0;">PMF验证</h4>
-                    <p style="font-size:12px;">跨品类适配 · 青训基地拓展<br />乒乓球·羽毛球·匹克球</p>
-                    <div class="phase-status">⏱ 12-18月</div>
-                </div>
-                <div class="card" style="text-align:center;border-top:2px solid rgba(240,192,96,0.3);">
-                    <div style="font-size:11px;color:#f0c060;letter-spacing:1px;">阶段 4</div>
-                    <h4 style="margin:4px 0;">商业化</h4>
-                    <p style="font-size:12px;">国家队合作 · 硬件+账号模式<br />设备销售 + 账号订阅</p>
-                    <div class="phase-status">⏱ 18-24月</div>
-                </div>
-                <div class="card" style="text-align:center;border-top:2px solid rgba(240,192,96,0.4);">
-                    <div style="font-size:11px;color:#f0c060;letter-spacing:1px;">阶段 5</div>
-                    <h4 style="margin:4px 0;">生态平台</h4>
-                    <p style="font-size:12px;">开放API · 第三方接入<br />跨运动品类覆盖</p>
-                    <div class="phase-status">⏱ 24-36月</div>
-                </div>
+            <div class="proto-item">
+                <img src="images/proto-07-设备管理.png" alt="设备管理" />
             </div>
-        </section>
+        </div>
 
-        <!-- ===== 11 冷启动模式 ===== -->
-        <section id="coldstart" class="gap-section">
-            <div class="section-label">11 / 冷启动模式</div>
-            <h2 class="section-title">从0到1的 <span class="highlight">启动路径</span></h2>
+        <div style="margin-top:12px; padding:10px 16px; background:rgba(255,255,255,0.015); border-radius:8px; border:1px solid rgba(255,255,255,0.03);">
+            <p style="font-size:11px; color:rgba(255,255,255,0.06);">
+                Figma 设计文件 · 7 个核心页面 · 覆盖完整操作路径
+            </p>
+        </div>
+    </section>
 
-            <div class="grid-3" style="margin-top:24px;">
-                <div class="card" style="border-color:rgba(240,192,96,0.08);">
-                    <div style="font-size:11px;color:#f0c060;letter-spacing:1px;">Layer 1</div>
-                    <h4 style="margin-top:4px;">种子球路库</h4>
-                    <p>从公开赛事录像中提取 <strong style="color:rgba(255,255,255,0.4);">500+ 关键球</strong>，标注旋转、落点、节奏参数，作为AI的初始训练数据。</p>
-                </div>
-                <div class="card" style="border-color:rgba(240,192,96,0.08);">
-                    <div style="font-size:11px;color:#f0c060;letter-spacing:1px;">Layer 2</div>
-                    <h4 style="margin-top:4px;">专家校验闭环</h4>
-                    <p>邀请专业教练对AI生成的球路进行 <strong style="color:rgba(255,255,255,0.4);">可执行性评分</strong>，建立“好球路”的金标准。</p>
-                </div>
-                <div class="card" style="border-color:rgba(240,192,96,0.08);">
-                    <div style="font-size:11px;color:#f0c060;letter-spacing:1px;">Layer 3</div>
-                    <h4 style="margin-top:4px;">数据飞轮启动</h4>
-                    <p>首批用户使用后，系统自动记录 <strong style="color:rgba(255,255,255,0.4);">选手回球质量、适应曲线</strong>，持续优化AI生成的球路参数。</p>
-                </div>
+    <!-- ============================================================ -->
+    <!-- ===== 11 Demo ===== -->
+    <!-- ============================================================ -->
+    <section id="demo" class="gap-section" style="border-bottom:none;">
+        <div class="section-label">11 / Demo</div>
+        <div class="section-title">1 分钟看懂 <span class="highlight">A 神</span></div>
+        <div class="video-wrapper">
+            <video controls>
+                <source src="video/demo.mp4" type="video/mp4" />
+                您的浏览器不支持视频播放。
+            </video>
+        </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- ===== 联系我 ===== -->
+    <!-- ============================================================ -->
+    <section id="contact" class="contact-section">
+        <div class="contact-inner">
+            <div class="label">📬 联系我</div>
+            <div class="name">朱颖</div>
+            <div class="contact-row">
+                <span>📞 13846015637</span>
+                <span>✉️ <a href="mailto:2077920487@qq.com">2077920487@qq.com</a></span>
             </div>
-        </section>
+            <a href="#top" class="btn-contact">⬆ 回到顶部</a>
+        </div>
+    </section>
 
-        <!-- ===== 12 成功衡量标准 ===== -->
-        <section id="metrics" class="gap-section">
-            <div class="section-label">12 / 成功衡量标准</div>
-            <h2 class="section-title">北极星指标 + <span class="highlight">五大核心 KPI</span></h2>
-            <p class="section-desc">A神的北极星指标：<span style="color:#f0c060;">选手在AI陪练对抗中，面对新球路的成功回球率提升幅度。</span></p>
+    <!-- ===== Footer ===== -->
+    <footer class="footer">
+        © 2026 · A神（AETHER）· 隔网球类智能陪练
+    </footer>
 
-            <div class="grid-4" style="margin-top:24px;">
-                <div class="card" style="text-align:center;">
-                    <span class="metric-value">≥ 15%</span>
-                    <h4>新球路适应速度</h4>
-                    <p style="font-size:12px;">选手面对新球路时<br />成功回球率提升</p>
-                </div>
-                <div class="card" style="text-align:center;">
-                    <span class="metric-value">≥ 70%</span>
-                    <h4>训练采纳率</h4>
-                    <p style="font-size:12px;">教练选择使用AI陪练<br />替代部分传统陪练的比例</p>
-                </div>
-                <div class="card" style="text-align:center;">
-                    <span class="metric-value">≥ 85%</span>
-                    <h4>客户留存率</h4>
-                    <p style="font-size:12px;">年度续约率<br />衡量长期价值</p>
-                </div>
-                <div class="card" style="text-align:center;">
-                    <span class="metric-value">≥ 200</span>
-                    <h4>日活球路数</h4>
-                    <p style="font-size:12px;">单台设备每日<br />生成的不同球路数量</p>
-                </div>
-            </div>
-            <div style="margin-top:16px; padding:14px 20px; background:rgba(240,192,96,0.03); border-radius:10px; border:1px solid rgba(240,192,96,0.06); text-align:center;">
-                <p style="font-size:13px; color:rgba(255,255,255,0.2);">
-                    <span style="color:#f0c060;">⚡ 关键指标：</span> NPS ≥ +30 &nbsp;·&nbsp; 系统可用性 ≥ 99.5% &nbsp;·&nbsp; 单球生成延迟 ≤ 200ms
-                </p>
-            </div>
-        </section>
-
-        <!-- ===== 13 迭代优化机制 ===== -->
-        <section id="iteration" class="gap-section">
-            <div class="section-label">13 / 迭代优化</div>
-            <h2 class="section-title">数据驱动的 <span class="highlight">三环迭代</span></h2>
-            <p class="section-desc">每周A/B测试 · 每日用户反馈 · 每月模型训练 — 三个并行环驱动产品持续进化。</p>
-
-            <div class="grid-3" style="margin-top:24px;">
-                <div class="card" style="border-color:rgba(240,192,96,0.08);">
-                    <div style="font-size:11px;color:#f0c060;letter-spacing:1px;">周迭代</div>
-                    <h4 style="margin-top:4px;">🔬 A/B测试环</h4>
-                    <p style="font-size:13px;color:rgba(255,255,255,0.2);line-height:1.8;">对比新球路生成策略 vs 当前策略<br />关注指标：训练采纳率、新球路适应速度</p>
-                    <div style="margin-top:6px;font-size:12px;color:rgba(255,255,255,0.1);">触发条件：连续2周适应速度 &lt; 12%</div>
-                </div>
-                <div class="card" style="border-color:rgba(240,192,96,0.08);">
-                    <div style="font-size:11px;color:#f0c060;letter-spacing:1px;">日迭代</div>
-                    <h4 style="margin-top:4px;">📊 用户反馈环</h4>
-                    <p style="font-size:13px;color:rgba(255,255,255,0.2);line-height:1.8;">显式反馈（评分）+ 隐式反馈（行为数据）<br />实时调整推荐权重，优化个性化画像</p>
-                    <div style="margin-top:6px;font-size:12px;color:rgba(255,255,255,0.1);">触发条件：负面反馈率 &gt; 20%</div>
-                </div>
-                <div class="card" style="border-color:rgba(240,192,96,0.08);">
-                    <div style="font-size:11px;color:#f0c060;letter-spacing:1px;">月迭代</div>
-                    <h4 style="margin-top:4px;">🧠 模型训练环</h4>
-                    <p style="font-size:13px;color:rgba(255,255,255,0.2);line-height:1.8;">全量历史数据 + 新标注数据<br />发布新版本模型（版本号递增）</p>
-                    <div style="margin-top:6px;font-size:12px;color:rgba(255,255,255,0.1);">版本号格式：V主版本.功能版本.补丁版本</div>
-                </div>
-            </div>
-
-            <div style="margin-top:24px; padding:20px 24px; background:rgba(255,255,255,0.015); border-radius:12px; border:1px solid rgba(255,255,255,0.04);">
-                <p style="font-size:13px; color:rgba(255,255,255,0.2); text-align:center; letter-spacing:1px;">📋 迭代决策流程</p>
-                <div class="iteration-flow">
-                    <span class="step">数据监控</span>
-                    <span class="arrow">→</span>
-                    <span class="step">触发阈值</span>
-                    <span class="arrow">→</span>
-                    <span class="step">分析报告</span>
-                    <span class="arrow">→</span>
-                    <span class="step" style="border-color:rgba(240,192,96,0.1);color:#f0c060;">团队评审</span>
-                    <span class="arrow">→</span>
-                    <span class="step" style="border-color:rgba(240,192,96,0.1);color:#f0c060;">决策执行</span>
-                </div>
-                <p style="font-size:11px; color:rgba(255,255,255,0.08); text-align:center; margin-top:8px;">
-                    数据监控实时 · 触发后2小时内生成报告 · 24小时内评审 · 评审后立即执行
-                </p>
-            </div>
-
-            <div style="margin-top:16px; display:grid; grid-template-columns:1fr 1fr 1fr; gap:12px;">
-                <div style="background:rgba(255,60,60,0.03); border-radius:10px; padding:14px 16px; border:1px solid rgba(255,60,60,0.06); text-align:center;">
-                    <div style="font-size:11px; color:rgba(255,60,60,0.4);">回滚触发条件</div>
-                    <div style="font-size:12px; color:rgba(255,255,255,0.2); line-height:1.6; margin-top:2px;">24h内可用性 &lt; 99%</div>
-                </div>
-                <div style="background:rgba(255,60,60,0.03); border-radius:10px; padding:14px 16px; border:1px solid rgba(255,60,60,0.06); text-align:center;">
-                    <div style="font-size:11px; color:rgba(255,60,60,0.4);">回滚动作</div>
-                    <div style="font-size:12px; color:rgba(255,255,255,0.2); line-height:1.6; margin-top:2px;">自动回滚至上一稳定版本</div>
-                </div>
-                <div style="background:rgba(255,60,60,0.03); border-radius:10px; padding:14px 16px; border:1px solid rgba(255,60,60,0.06); text-align:center;">
-                    <div style="font-size:11px; color:rgba(255,60,60,0.4);">恢复时间</div>
-                    <div style="font-size:12px; color:rgba(255,255,255,0.2); line-height:1.6; margin-top:2px;">≤ 5 分钟</div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ===== 14 原型设计 ===== -->
-        <section id="prototype" class="gap-section">
-            <div class="section-label">14 / 原型设计</div>
-            <h2 class="section-title">Figma 高保真 <span class="highlight">原型</span></h2>
-            <p class="section-desc">7个核心页面，覆盖教练端与运动员端完整路径。</p>
-
-            <div class="proto-grid">
-                <div class="proto-item"><img src="images/proto-01-登录页.png" alt="登录页" /></div>
-                <div class="proto-item"><img src="images/proto-02-训练模式.png" alt="训练模式" /></div>
-                <div class="proto-item"><img src="images/proto-03-实时对抗.png" alt="实时对抗" /></div>
-                <div class="proto-item"><img src="images/proto-04-训练报告.png" alt="训练报告" /></div>
-                <div class="proto-item"><img src="images/proto-05-个人档案.png" alt="个人档案" /></div>
-                <div class="proto-item"><img src="images/proto-06-战术库.png" alt="战术库" /></div>
-                <div class="proto-item"><img src="images/proto-07-设备管理.png" alt="设备管理" /></div>
-            </div>
-        </section>
-
-        <!-- ===== 15 Demo视频 ===== -->
-        <section id="demo" class="gap-section" style="border-bottom:none;">
-            <div class="section-label">15 / Demo 视频</div>
-            <h2 class="section-title">1分钟看懂 <span class="highlight">A神</span></h2>
-            <div class="video-wrapper">
-                <video controls>
-                    <source src="video/demo.mp4" type="video/mp4" />
-                    您的浏览器不支持视频播放。
-                </video>
-            </div>
-        </section>
-
-        <footer>
-            <div class="container">
-                <p>© 2026 朱颖 · A神（AETHER）· 隔网球类智能陪练系统</p>
-                <p style="margin-top:4px;font-size:11px;color:rgba(255,255,255,0.04);">
-                    苍穹 · 以太 · 虚无 · 自博弈探索 · 具身智能 · 长记忆 · 军工级保密
-                </p>
-            </div>
-        </footer>
-
-    </div>
+</div>
 
 </body>
 </html>
